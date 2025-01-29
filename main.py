@@ -1,6 +1,6 @@
 import streamlit as st
 
-memory_items_page = st.Page("pages/memory_items.py", title="Limitations", icon="🧠")
+memory_items_page = st.Page("pages/memory_items.py", title="Memory Items", icon="🧠")
 
 pg = st.navigation({
     "Must Know": [memory_items_page]
