@@ -13,6 +13,7 @@ with st.expander(":red-background[EMERGENCY DESCENT]"):
     
 with st.expander(":red-background[ENGINE FIRE ON-GROUND / TAIL PIPE FIRE]"):
     st.markdown("""
+*If during start, engine fire detector senses a temperature below 510$\degree$C or else engine fire is indicated by ground personnel.*    
 1. THRUST LEVER - IDENTYFY / IDLE
 2. ENG SWITCH - OFF
 3. ENG ISOL pushbutton - Push / check after 5 sec amber ':orange-background[**ENG ISOL**]'
@@ -21,13 +22,13 @@ with st.expander(":red-background[ENGINE FIRE ON-GROUND / TAIL PIPE FIRE]"):
     
 with st.expander(":red-background[ENGINE FIRE OR FAILURE DURING TAKEOFF]"):
     st.markdown("""
-*Airspeed below V1*
+*Airspeed below $V_{1}$*
 1. Rejected Takeoff 3-NAE-19 - Accomplish
 
-*Airspeed at or above V1*
+*Airspeed at or above $V_{1}$*
 1. THRUST levers - Fully forward, ATR
 2. VR - Rotate to 9 deg ANU initially
-3. Airspeed - Maintain at or above V2
+3. Airspeed - Maintain at or above $V_{2}$
 4. L/G - When positive rate of climb - UP
 """)
     
@@ -88,7 +89,7 @@ with st.expander(":red-background[L/R ENG FAIL]"):
     
 with st.expander(":red-background[L/R ENGINE FIRE]"):
     st.markdown("""
-*The indicated Engine Fire detector senses a temperature above 510 deg C*    
+*The indicated Engine Fire detector senses a temperature above 510$\degree$C*    
 *Audio 'Left/Right Engine Fire' callout*    
 *:red['FIRE'] light on the associated Engine Isolation Push button*    
 1. ENGINE FIRE - CONFIRM L or R    
@@ -98,4 +99,47 @@ with st.expander(":red-background[L/R ENGINE FIRE]"):
 4. ENGINE ISOLATION push button - Check associated CAS 'ENGINE ISOLATED' after five sec. CONFIRM ASSOCIATED :green-background['**1**'] illuminated    
 *If CAS Message remains, affected side:*    
 5. EXTINGUISHER push button - PUSH
+""")
+    
+    
+with st.expander(":orange-background[AFCS ABNORMAL DISCONNECT]"):
+    st.markdown("""
+*Indication: Flashing :red['AP'] on PFD and continuous 'Cavalry Charge' aural warning*
+1. Airplane control wheel - Grasp firmly and regain aircraft control
+2. Autopilot Disengage switch - Press to cancel aural warning (pilot or copilot wheel)
+3. Aircraft - Retrim manually as necessary    
+*If no AFCS associated CAS messages:*    
+4. Aircraft - Attempt to re-engange autopilot once
+""")
+    
+
+with st.expander(":orange-background[ENGINE HOT START ON GROUND]"):
+    st.markdown("""
+*Indications for hot start: Rapidly rising ITT approaching engine limits of 1,000$\degree$C or ITT hanging between 900$\degree$C and 1,000$\degree$C for 15 sec.*
+1. Engine Switch - OFF
+""")
+    
+with st.expander(":orange-background[ENGINE HUNG START ON GROUND]"):
+    st.markdown("""
+*Indications: engine fails to accelerate for > 30 sec*
+1. Engine Switch - OFF
+""")
+    
+with st.expander(":orange-background[SWPS INADVERTENT PUSHER OPERATION]"):
+    st.markdown("""
+*Non-commanded pusher operation, rapid nose-down motion*    
+:red-background[**WARNING: NATURAL STALLS ARE NOT PREVENTED WITH THE STICK PUSHER INOPERATIVE. STALLS MUST BE AVOIDED WHEN THE STICK PUSHER IS INOPERATIVE**]
+1. Control Wheel - Hold against pusher action
+2. AP disconnect button - Press and hold continuously
+""")
+    
+with st.expander(":red-background[TCAS RESOLUTION ADVISORY]"):
+    st.markdown("""
+*Accompanied by audio commands for climb, descend, level off or maintain vertical speed.*    
+1. Autopilot - Use yoke quick disconnect if AP enganged
+2. Aircraft attitude - Immediately comply with RA commands indicated on the PFD
+3. ATC Inform of TCAS RA    
+*When clear of conflict*     
+4. Aircraft - Return to previously assigned altitude and advice ATC    
+                      -- END --
 """)
