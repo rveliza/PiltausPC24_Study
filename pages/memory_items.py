@@ -79,3 +79,23 @@ with st.expander(":red-background[CABIN PRESSURE]"):
 1. Aircraft - Reduce descent rate    
                 -- END --
 """)
+    
+with st.expander(":red-background[L/R ENG FAIL]"):
+    st.markdown("""
+*The N1 has dropped 15% within 0.5 sec.  This will activate ATR during takeoff*
+1. Engine instruments - Monitor / Confirm
+""")
+    
+with st.expander(":red-background[L/R ENGINE FIRE]"):
+    st.markdown("""
+*The indicated Engine Fire detector senses a temperature above 510 deg C*    
+*Audio 'Left/Right Engine Fire' callout*    
+*:red['FIRE'] light on the associated Engine Isolation Push button*    
+1. ENGINE FIRE - CONFIRM L or R    
+*IF fire confirmed:*    
+2. THRUST LEVER - IDLE
+3. ENGINE SWITCH - OFF / STOP
+4. ENGINE ISOLATION push button - Check associated CAS 'ENGINE ISOLATED' after five sec. CONFIRM ASSOCIATED :green-background['**1**'] illuminated    
+*If CAS Message remains, affected side:*    
+5. EXTINGUISHER push button - PUSH
+""")
