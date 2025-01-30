@@ -324,3 +324,15 @@ with st.expander("The nose tire must be a _______ _________ tire"):
     st.write("Dual Chine")
 
 
+############# Cabin Pressurization
+st.write("## Cabin Pressurization")
+
+st.write("""
+| Description | psid |
+| :--------:  | :------: |
+| Maximum cabin positive pressure differential | 9.29 |
+| Maximum cabin negative pressure differential | -0.3 |
+| Maximum pressure differential for takeoff and landing | 0.7 |
+
+""")
+
