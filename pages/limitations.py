@@ -336,3 +336,13 @@ st.write("""
 
 """)
 
+
+################## Door and Emergency Exit
+st.write("## Door and Emergency Exit")
+st.write("#### Forward Airstar Limitation")
+with st.expander("Do not allow more than ____ person on the forward airstair at any given time"):
+    st.write("one")
+
+st.write("#### Emergency Exit Security Pins")
+with st.expander("Each internal emergency exit overnight security pin, if installed, must be _______ and _______ before flight"):
+    st.write("removed / stowed")
