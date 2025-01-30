@@ -133,6 +133,9 @@ st.write("#### Vertical Situation Display")
 with st.expander("Do not use the Vertical display as:"):
     st.write("Primary source of navigation")
 
+
+
+#################### Airspeed Limitations
 st.write("## Airspeed Limitations")
 st.write("#### Maximum Operating Speed")
 off_on = st.toggle(label="off/on", key="mos")
@@ -205,6 +208,8 @@ mlges_off = """
 | $V_{LO}$ (RETRACT) | | Do not retract the landing gear above this speed |
 | $V_{LO}$ (EXTEND-EGES)|  | Do not extend the emergency landing gear above this |
 """
+
+############### Baggage Cargo
 
 if off_on:
     st.write(mlges_on)
@@ -299,3 +304,23 @@ else:
 
 with st.expander("Maximum Freight Load is: "):
     st.write(f"{weight} {lbs_kgs}")
+
+
+################## Brakes and Tires
+st.write("## Brakes and Tires")
+
+st.write("#### Brakes")
+with st.expander("To allow adequate cooling of the wheels and brakes the aircraft must remain on the ground for at leat 120 min following these two events"):
+    st.markdown("""
+* Rejected takeoff with brake on speed greater than $V_R$ -20 kt and heavy brake usage
+* 0$\degree$ flap full stop landing and heavy brake usage
+""")
+    
+st.write("#### Tires")
+with st.expander("The maximum permissible tire speed is:"):
+    st.write("165 kt")
+
+with st.expander("The nose tire must be a _______ _________ tire"):
+    st.write("Dual Chine")
+
+
