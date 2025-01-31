@@ -821,6 +821,39 @@ with st.expander ("Maximum number of occupants"):
 """)
     
 
+st.write("## Oil")
+st.write("#### Oil Quatity Limitations")
+
+off_on = st.toggle("off/on", key="oil_limits")
+oil_tank_total_volume = ""
+oil_tank_fill_volume = ""
+oil_tank_useable = ""
+
+if off_on:
+    oil_tank_total_volume = "5.85"
+    oil_tank_fill_volume = "5.65"
+    oil_tank_useable = "4.32"
+
+st.write(f"""
+| Quantity Description | Quantity (qt) |
+| :-: | :-: |
+| Oil Tank Total Volume | {oil_tank_total_volume} |
+| Oil Tank Fill Volume | {oil_tank_fill_volume} |
+| Oil Tank Usable Volume | {oil_tank_useable} |
+""")
+
+with st.expander("Oil level must not be below the _____ indicator mark on the oil tank sight glass prior to flight"):
+    st.write("ADD")
+
+with st.expander("The maximum permissible oil consumption rate is: "):
+    oil_qty = ""
+    oil_level_ind = st.radio("Units", ["Gallons", "Quarts"], label_visibility="collapsed", horizontal=True, index=1)
+    if oil_level_ind == "Gallons":
+        oil_qty = "0.032 gal/hr"
+    else:
+        oil_qty = "0.128 qt/hr"
+
+    st.write(f"{oil_qty}")
 
 
 
