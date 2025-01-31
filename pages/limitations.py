@@ -627,3 +627,88 @@ with st.expander("The PC-24 is certified in the Commuter Category and is approve
     
 with st.expander ("An approprately authorized and approved ______ may be used to operate the aircraft with inoperative equipment"):
     st.write("MMEL")
+
+
+############## Loading Limitations
+st.write("## Loading Limitations")
+st.write("#### Weight Limitations")
+
+col1, col2 = st.columns(2)
+max_ramp_w = ""
+max_takoff_w = ""
+max_land_w = ""
+max_zf_w = ""
+max_cargo_w = ""
+large_net = ""
+small_net = ""
+max_floor_load_seat_rails = ""
+max_floor_load_panels = ""
+
+with col1:
+    msn = st.radio("MSN", ["101 - 500", "501 - UP"], horizontal=True, key="weight_limits", index = 1)
+with col2:
+    units = st.radio("Units", ["Pounds", "Kilograms"], horizontal=True, key="weight_limits_units")
+
+off_on = st.toggle("off/on", key="weight_limits_table")
+
+if msn == "101 - 500" and units == 'Kilograms' and off_on:
+    max_ramp_w = "8,345"
+    max_takoff_w = "8,300"
+    max_land_w = "7,665"
+    max_zf_w = "6,450"
+    max_cargo_w = "1,134"
+
+if msn == "501 - UP" and units == "Kilograms" and off_on:
+    max_ramp_w = "8,545"
+    max_takoff_w = "8,500"
+    max_land_w = "7,865"
+    max_zf_w = "6,650"
+    max_cargo_w = "1,334"
+
+if msn == "101 - 500" and units == "Pounds" and off_on:
+    max_ramp_w = "18,400"
+    max_takoff_w = "18,300"
+    max_land_w = "16,900"
+    max_zf_w = "14,220"
+    max_cargo_w = "2,500"
+
+if msn == "501 - UP" and units == "Pounds" and off_on:
+    max_ramp_w = "18,840"
+    max_takoff_w = "18,740"
+    max_land_w = "17,340"
+    max_zf_w = "14,660"
+    max_cargo_w = "2,940"
+
+if units == 'Kilograms' and off_on:
+    large_net = "240"
+    small_net = "180"
+    max_floor_load_seat_rails = "1,000 kg/m"
+    max_floor_load_panels = "500 $kg/m^2$"
+
+if units == 'Pounds' and off_on:
+    large_net = "530"
+    small_net = "400"
+    max_floor_load_seat_rails = "670 lb/ft"
+    max_floor_load_panels = "100 $lb/ft^2$"
+
+st.write(f"""
+| Description | Weight in {units}|
+| :-: | :-: |
+| Maximum Ramp Weight | {max_ramp_w} |
+| Maximum Takeoff Weight | {max_takoff_w} |
+| Maximum Landing Weight | {max_land_w} |
+| Maximum Zero Fuel Weight | {max_zf_w} |
+| Maximum Cargo Weight | {max_cargo_w} |
+| Maximum Baggage Weight (large restraint net) | {large_net} |
+| Maximum Baggage Weight (small restraint net) | {small_net} |
+| Maximum Floor Loading (on seat rails) | {max_floor_load_seat_rails} |
+| Maximum Floor Loading (over floor panels) | {max_floor_load_panels} |
+         
+""")
+
+
+
+
+
+
+
