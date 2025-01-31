@@ -327,12 +327,23 @@ with st.expander("The nose tire must be a _______ _________ tire"):
 ############# Cabin Pressurization
 st.write("## Cabin Pressurization")
 
-st.write("""
+off_on = st.toggle("off/on", key="cab_press")
+
+max_pos_dif = ""
+max_neg_dif = ""
+max_press_dif = ""
+
+if off_on:
+    max_pos_dif = "9.27"
+    max_neg_dif = "-0.3"
+    max_press_dif = "0.7"
+
+st.write(f"""
 | Description | psid |
 | :--------:  | :------: |
-| Maximum cabin positive pressure differential | 9.29 |
-| Maximum cabin negative pressure differential | -0.3 |
-| Maximum pressure differential for takeoff and landing | 0.7 |
+| Maximum cabin positive pressure differential | {max_pos_dif} |
+| Maximum cabin negative pressure differential | {max_neg_dif} |
+| Maximum pressure differential for takeoff and landing | {max_press_dif} |
 
 """)
 
@@ -346,3 +357,92 @@ with st.expander("Do not allow more than ____ person on the forward airstair at 
 st.write("#### Emergency Exit Security Pins")
 with st.expander("Each internal emergency exit overnight security pin, if installed, must be _______ and _______ before flight"):
     st.write("removed / stowed")
+
+
+#### Electrical System
+st.write("## Electrical System")
+st.write("#### Generator Limitations")
+off_on = st.toggle("off/on", key="gen_limits")
+
+qpm_amps = ""
+gnd_flight_amps = ""
+max_voltage = ""
+
+if off_on:
+    qpm_amps = "250 A"
+    gnd_flight_amps = "400 A"
+    max_voltage = "29.5 Vdc"
+
+
+
+st.write(f"""
+| Description | Limitation |
+| :-: | :-: |
+| Quiet Power Mode  | {qpm_amps}  |
+| Ground idle and above  | {gnd_flight_amps}   |
+| Flight  | {gnd_flight_amps}  |
+| Maximum Voltage  | {max_voltage} |
+""")
+
+st.write("#### Battery Limitations")
+
+with st.expander("The voltage for charging the batteries must not exceed: "):
+    st.write("32 V")
+
+batt_type = st.radio("Batteries", ["Ni-Cd", "Li-Ion"], key="battery_type")
+
+min_bat_temp_flt = ""
+min_bat_start = ""
+min_bat_temp = ""
+
+off_on = st.toggle("off/on", key="bat_limits")
+
+
+if batt_type == "Ni-Cd" and off_on:
+    min_bat_start = "22.0 V Bat 1 / 23.5 V Bat 2"
+    min_bat_temp = "-20$\degree$C"
+    min_bat_temp_flt = "0$\degree$"
+
+elif batt_type == "Li-Ion" and off_on:
+    min_bat_start = "State Of Charge (SOC) indicators of both batteries are green"
+    min_bat_temp = "-5$\degree$C"
+    min_bat_temp_flt = "0$\degree$"
+
+
+battery_table_on = f"""
+| Description | Limitation |
+| :-: | :-: |
+| Minimum battery temperature for flight | {min_bat_temp_flt} |
+| Minimum battery volts for start | {min_bat_start} |
+| Minimum {batt_type} battery temperature for battery engine starts | {min_bat_temp}  |
+"""
+st.write(battery_table_on)
+
+st.write("#### Ground Power Unit Limitations")
+
+off_on = st.toggle("off/on", key="gpu_limits")
+voltage = ""
+load_capacity = ""
+min_v_start = ""
+min_v_charge = ""
+max_volt_charge = ""
+min_oat_gpu_start = ""
+
+if off_on:
+    voltage = "25.0 - 29.5 Vdc"
+    load_capacity = "1,200 A Initial State Surge, 450 A Continuous"
+    min_v_start = "24.0 Vdc"
+    min_v_charge = "20.9 Vdc"
+    max_volt_charge = "29.5 Vdc"
+    min_oat_gpu_start = "-54$\degree$C"
+
+st.write(f"""
+| Description | Limitation |
+| :-: | :-: |
+| Voltage | {voltage} |
+| Load Capacity | {load_capacity } |
+| Minimum volts for start | {min_v_start} |
+| Minimum voltage to charge batteries | {min_v_charge} |
+| Maximum voltage to charge batteries | {max_volt_charge} |
+| Minimum OAT for GPU start | {min_oat_gpu_start} |
+""")
