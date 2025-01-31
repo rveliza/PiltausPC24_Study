@@ -613,3 +613,17 @@ with st.expander(" Do not opearte thw ________________ push botton / ___________
     st.write(" SWPS ICE OVRD / SWPS ICE MODE")
 
 
+############ Kinds of Operation
+st.write("## Kinds of Operation")
+
+with st.expander("The PC-24 is certified in the Commuter Category and is approved for the following types of operation when the required equipment is installed and operational:"):
+    st.write("""
+- VFR Day
+- VFR Night
+- IFR Day including automatic approaches to CAT 1 weather minimums, single pilot
+- IFR Night including automatic approaches to CAT 1 weather minimums, single pilot
+- Flight Into Known Icing conditions
+""")
+    
+with st.expander ("An approprately authorized and approved ______ may be used to operate the aircraft with inoperative equipment"):
+    st.write("MMEL")
