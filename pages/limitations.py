@@ -633,7 +633,6 @@ with st.expander ("An approprately authorized and approved ______ may be used to
 st.write("## Loading Limitations")
 st.write("#### Weight Limitations")
 
-col1, col2 = st.columns(2)
 max_ramp_w = ""
 max_takoff_w = ""
 max_land_w = ""
@@ -643,6 +642,8 @@ large_net = ""
 small_net = ""
 max_floor_load_seat_rails = ""
 max_floor_load_panels = ""
+
+col1, col2 = st.columns(2)
 
 with col1:
     msn = st.radio("MSN", ["101 - 500", "501 - UP"], horizontal=True, key="weight_limits", index = 1)
@@ -706,6 +707,85 @@ st.write(f"""
          
 """)
 
+st.write("#### Center of Gravity Limitations")
+
+max_r_w_cg_fwd = ""
+max_r_w_cg_aft = ""
+max_takeoff_w_cg_fwd = ""
+max_takeoff_w_cg_aft = ""
+
+
+
+units = st.radio("Units", ["Pounds", "Kilograms"], horizontal=True, key="cg_limits_units")
+
+off_on = st.toggle("off/on", key="cg_limits_table")
+max_r_w_cg_fwd = ""
+max_r_w_cg_aft = ""
+max_takoff_w_cg_fwd = ""
+max_takoff_w_cg_aft = ""
+weight_1 = ""
+weight_1_cg = ""
+weight_2 = ""
+weight_2_cg =""
+weight_3 = ""
+weight_3_cg = ""
+weight_4 = ""
+weight_4_cg = ""
+
+if units == "Kilograms":
+    weight_1 = "6,150"
+    weight_2 = "5,850"
+    weight_3 = "5,221"
+    weight_4 = "4,988"
+else:
+    weight_1 = "13,560"
+    weight_2 = "12,895"
+    weight_3 = "11,510"
+    weight_4 = "10,995"
+
+if off_on:
+    max_r_w_cg_fwd = "25.0"
+    max_r_w_cg_aft = "40.0"
+    max_takeoff_w_cg_fwd = "25.0"
+    max_takeoff_w_cg_aft = "39.8"
+    weight_1_cg = "47.6"
+    weight_2_cg = "25.0"
+    weight_3_cg = "37.0"
+    weight_4_cg = "47.6"
+
+
+
+st.write(f"""
+| Weight in {units} | Forward Limit AOD: % MAC | Aft Limit AOD: % MAC |
+| :-: | :-: | :-: |
+| Maximum Ramp Weight | {max_r_w_cg_fwd} | {max_r_w_cg_aft} |
+| Maximum Takeoff Weight | {max_takeoff_w_cg_fwd} | {max_takeoff_w_cg_aft} |
+| {weight_1} | | {weight_1_cg} |
+| {weight_2} | {weight_2_cg} | |
+| {weight_3} | {weight_3_cg} | |
+| {weight_4} | | {weight_4_cg} |
+         
+""")
+
+st.write("#### Flight Maneuver Load Factor Limits")
+with st.expander("Operation is limited to any manouvre incident to normal flying, stalls (except whip stalls) and steep turns in which the angle of bank is not more than:"):
+    st.write("60$\degree$")
+
+up_limits = ""
+down_limits = ""
+
+off_on = st.toggle("off/on", key="man_limits")
+
+if off_on:
+    up_limits = "+3.0 g, -1.2 g"
+    down_limits = "+2.0 g, 0.0 g"
+
+st.write(f"""
+| Flap Position | Load Limitations |
+| :-: | :-: |
+| Up | {up_limits} |
+| Down | {down_limits} |
+""")
 
 
 
