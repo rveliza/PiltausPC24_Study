@@ -2,7 +2,6 @@ import streamlit as st
 
 highlight = ":orange-background"
 
-
 st.title("Limitataions")
 
 #################### AIRPLANE DOCUMENTATION
@@ -222,7 +221,8 @@ lbs_kgs = st.radio(
     ["lb", "kg"],
     index=0,
     label_visibility="collapsed",
-    key="baggage_cargo"
+    key="baggage_cargo",
+    horizontal=True
 )
 
 weight = 0
@@ -248,7 +248,8 @@ in_or_mm = st.radio(
     ["in", "mm"],
     key="baggage_limitation",
     index=1,
-    label_visibility="collapsed"
+    label_visibility="collapsed",
+    horizontal=True
 )
 
 off_on = st.toggle("off/on", key="baggs_limits")
@@ -389,7 +390,7 @@ st.write("#### Battery Limitations")
 with st.expander("The voltage for charging the batteries must not exceed: "):
     st.write("32 V")
 
-batt_type = st.radio("Batteries", ["Ni-Cd", "Li-Ion"], key="battery_type")
+batt_type = st.radio("Batteries", ["Ni-Cd", "Li-Ion"], key="battery_type", horizontal=True)
 
 min_bat_temp_flt = ""
 min_bat_start = ""
@@ -446,3 +447,82 @@ st.write(f"""
 | Maximum voltage to charge batteries | {max_volt_charge} |
 | Minimum OAT for GPU start | {min_oat_gpu_start} |
 """)
+
+#################### Flight Crew
+
+st.write("## Flight Crew")
+with st.expander("The minimum required flight crew is _____ pilot in the _____ hand seat"):
+    st.write("one / left")
+
+
+################### Fuel System
+st.write("## Fuel System")
+st.write("#### General")
+
+with st.expander("The electric fuel booster pumps must be:"):
+    st.write("operative")
+
+with st.expander("The fuel crossfeed valve must be:"):
+    st.write("operative")
+
+with st.expander("The maximum permissible fuel temperature is:"):
+    st.write("80$\degree$C")
+
+with st.expander("The minimum permissible fuel temperature is:"):
+    st.write("-40$\degree$C")
+
+st.write("#### Fuel Quantity")
+
+fuel_units = st.radio("Units", ["Gallons", "Liters", "Pounds", "Kilograms"], index=2, horizontal=True, label_visibility="collapsed")
+
+total_qty = ""
+usable_qty = ""
+max_imb = ""
+unusable = ""
+
+off_on = st.toggle("off/on", key="fuel_qyt")
+
+if fuel_units == "Gallons" and off_on:
+    total_qty = "895"
+    usable_qty = "890"
+    max_imb = "49"
+    unusable = "5.3"
+
+elif fuel_units == "Liters" and off_on:
+    total_qty = "3,389"
+    usable_qty = "3,369"
+    max_imb = "189"
+    unusable = "20"
+
+elif fuel_units == "Pounds" and off_on:
+    total_qty = "5,999.8"
+    usable_qty = "5,964"
+    max_imb = "330"
+    unusable = "35"
+
+elif fuel_units == "Kilograms" and off_on:
+    total_qty = "2,721"
+    usable_qty = "2,705"
+    max_imb = "150"
+    unusable = "16"
+
+
+st.write(f"""
+| Quantity Description | Quantity |
+| :-: | :-: |
+| Total quantity | {total_qty} |
+| Usuable quantity | {usable_qty} |
+| Maximum permissible imbalance | {max_imb} |
+| Unusuable fuel quantity | {unusable} |
+""")
+
+st.write("#### Pressure Refueling Limitations")
+
+with st.expander("The maximum refueling pressure is:"):
+    st.write("60 psi")
+
+with st.expander("The maximum defueling suction pressure is:"):
+    st.write("10 psi")
+
+with st.expander("Prior to departure the pwer switch (PWR - REFUEL /DEFUEL) must be:"):
+    st.write("off")
