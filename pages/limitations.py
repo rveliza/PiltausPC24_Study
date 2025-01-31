@@ -19,6 +19,7 @@ with st.expander("Documents On Board"):
 """)
     
 ################ AIRPORT LIMITATIONS
+
 st.write("## Airport Limitations")
     
 st.write(":blue-background[**Note:**] A wet runway is defined as a runway from which the surface is covered with a layer of water less than 1/8 in. (3 mm) in depth or the equivalent amount of a related substance or by a sufficient level of moisture to give a reflective appearance, but without any significant area of standing water.")
@@ -53,7 +54,7 @@ with st.expander("Maximum tailwind component for takeoff and landing"):
 
 
 ################ ACE
-
+st.write("---------------")
 st.write("## Advanced Cockpit Environment (ACE)")
 
 st.write(":blue-background[**Note:**] The us of 'PITCH ATTITUDE HOLD' mode recommended during operation in severe turbulence.")
@@ -135,6 +136,7 @@ with st.expander("Do not use the Vertical display as:"):
 
 
 #################### Airspeed Limitations
+st.write("---------------")
 st.write("## Airspeed Limitations")
 st.write("#### Maximum Operating Speed")
 off_on = st.toggle(label="off/on", key="mos")
@@ -209,7 +211,7 @@ mlges_off = """
 """
 
 ############### Baggage Cargo
-
+st.write("---------------")
 if off_on:
     st.write(mlges_on)
 else:
@@ -308,6 +310,7 @@ with st.expander("Maximum Freight Load is: "):
 
 
 ################## Brakes and Tires
+st.write("---------------")
 st.write("## Brakes and Tires")
 
 st.write("#### Brakes")
@@ -326,6 +329,7 @@ with st.expander("The nose tire must be a _______ _________ tire"):
 
 
 ############# Cabin Pressurization
+st.write("---------------")
 st.write("## Cabin Pressurization")
 
 off_on = st.toggle("off/on", key="cab_press")
@@ -350,6 +354,7 @@ st.write(f"""
 
 
 ################## Door and Emergency Exit
+st.write("---------------")
 st.write("## Door and Emergency Exit")
 st.write("#### Forward Airstar Limitation")
 with st.expander("Do not allow more than ____ person on the forward airstair at any given time"):
@@ -361,6 +366,7 @@ with st.expander("Each internal emergency exit overnight security pin, if instal
 
 
 #### Electrical System
+st.write("---------------")
 st.write("## Electrical System")
 st.write("#### Generator Limitations")
 off_on = st.toggle("off/on", key="gen_limits")
@@ -449,13 +455,14 @@ st.write(f"""
 """)
 
 #################### Flight Crew
-
+st.write("---------------")
 st.write("## Flight Crew")
 with st.expander("The minimum required flight crew is _____ pilot in the _____ hand seat"):
     st.write("one / left")
 
 
 ################### Fuel System
+st.write("---------------")
 st.write("## Fuel System")
 st.write("#### General")
 
@@ -526,3 +533,35 @@ with st.expander("The maximum defueling suction pressure is:"):
 
 with st.expander("Prior to departure the pwer switch (PWR - REFUEL /DEFUEL) must be:"):
     st.write("off")
+
+st.write("---------------")
+############## Ice Protection
+st.write("## Ice Protection System")
+st.write("#### Pneumatic Deice Boots")
+
+with st.expander("The inflation of the de-icing boots is note recommended when TAT < ______, unless it is required due to the presence of icing conditions."):
+    st.write("""
+
+-40$\degree$C
+
+:blue-background[Note:] If operated below -40$\degree$C, a visual isnpection of the pneumatic boots must be performed and a system functional test carried out before takeoff.
+""")
+    
+st.write("#### Wing Anti-Ice System")
+with st.expander("The WAI is inhibited in these conditions:"):
+    st.write("""
+* TAT > 15$\degree$C
+* Aircraft on ground
+""")
+    
+with st.expander("Do not operate the WAI system with a TAT of more than __  ___, unless required by the presence of icing conditions."):
+    st.write("10$\degree$C")
+
+st.write("#### Windshield Heating System")
+with st.expander("Do not operate the Windshield Emergency heating on ground or when TAT is > _______"):
+    st.write("10$\degree$C")
+
+st.write("#### Wing inspection Light")
+with st.expander(f"The wing inspection light must be _________ if flying into known icing conditions at {highlight}[night] or if known acing conditions are forecasted at {highlight}[night]"):
+    st.write("operational")
+
