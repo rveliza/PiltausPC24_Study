@@ -192,8 +192,6 @@ else:
 
 
 st.write("#### Maximum Landing Gear Speed")
-
-
 off_on = st.toggle("off/on", key="mlges")
 
 mlges_on = """
@@ -214,14 +212,17 @@ mlges_off = """
 | $V_{LO}$ (EXTEND-EGES)|  | Do not extend the emergency landing gear above this |
 """
 
-############### Baggage Cargo
-st.write("---------------")
 if off_on:
     st.write(mlges_on)
 else:
     st.write(mlges_off)
 
+
+
+############### Baggage Cargo
+st.write("---------------")
 st.write("## Baggage / Cargo Area")
+
 lbs_kgs = st.radio(
     "Units",
     ["lb", "kg"],
@@ -287,29 +288,24 @@ st.write(baggage_limitations_table_on)
 st.write("#### Cargo Limitations")
 weight = ""
 
-col1, col2 = st.columns(2)
-weight = ""
-
-
-with col1:
-    msn = st.radio("MSN", ['101 - 500', '501 - UP'], index=1)
-with col2:
-    lbs_kgs = st.radio("Units", ["lb", "kg"])
-
-if msn == '101 - 500' and lbs_kgs == 'lb':
-    weight = "2,500"
-
-elif msn == '101 - 500' and lbs_kgs == 'kg':
-    weight = "1,134"
-
-elif msn == '501 - UP' and lbs_kgs == 'lb':
-    weight = "2,940"
-
-else:
-    weight = "1,334"
+msn = st.radio("MSN", ['101 - 500', '501 - UP'], index=1, horizontal=True)
 
 
 with st.expander("Maximum Freight Load is: "):
+    lbs_kgs = st.radio("Units", ["lb", "kg"], horizontal=True, label_visibility="collapsed")
+
+    if msn == '101 - 500' and lbs_kgs == 'lb':
+        weight = "2,500"
+
+    elif msn == '101 - 500' and lbs_kgs == 'kg':
+        weight = "1,134"
+
+    elif msn == '501 - UP' and lbs_kgs == 'lb':
+        weight = "2,940"
+
+    else:
+        weight = "1,334"
+
     st.write(f"{weight} {lbs_kgs}")
 
 
@@ -629,6 +625,32 @@ with st.expander ("An approprately authorized and approved ______ may be used to
     st.write("MMEL")
 
 
+############# Landing Gear
+st.write("## Landing Gear")
+
+gear_temp = ""
+with st.expander("Do not operate the landing gear if the temperature is less than _______"):
+    temp_units = st.radio("Units", ['Fahrenheit', 'Celsius'], horizontal=True, label_visibility="collapsed", key="gear_temp", index=1)
+    if temp_units == 'Fahrenheit':
+        gear_temp = "-85$\degree$F"
+
+    else:
+        gear_temp = "-65$\degree$C"
+
+    st.write(f"{gear_temp}")
+
+st.write("#### Towing Limitations")
+towing_max_w = ""
+
+with st.expander("The weight of a towbar-less tug must not exceed____"):
+    tow_weight = st.radio("Units", ['Pounds', 'Kilograms'], horizontal=True,        key="tow_limits", label_visibility="collapsed")
+    if tow_weight == 'Pounds':
+        towing_max_w = "5,379 lb"
+    else:
+        towing_max_w = "2,440 kg"
+    st.write(f"{towing_max_w}")
+
+
 ############## Loading Limitations
 st.write("## Loading Limitations")
 st.write("#### Weight Limitations")
@@ -648,7 +670,7 @@ col1, col2 = st.columns(2)
 with col1:
     msn = st.radio("MSN", ["101 - 500", "501 - UP"], horizontal=True, key="weight_limits", index = 1)
 with col2:
-    units = st.radio("Units", ["Pounds", "Kilograms"], horizontal=True, key="weight_limits_units")
+    units = st.radio("Units", ["Pounds", "Kilograms"], horizontal=True, key="weight_limits_units", label_visibility="collapsed")
 
 off_on = st.toggle("off/on", key="weight_limits_table")
 
@@ -716,7 +738,7 @@ max_takeoff_w_cg_aft = ""
 
 
 
-units = st.radio("Units", ["Pounds", "Kilograms"], horizontal=True, key="cg_limits_units")
+units = st.radio("Units", ["Pounds", "Kilograms"], horizontal=True, key="cg_limits_units", label_visibility="collapsed")
 
 off_on = st.toggle("off/on", key="cg_limits_table")
 max_r_w_cg_fwd = ""
@@ -788,6 +810,16 @@ st.write(f"""
 """)
 
 
+st.write("#### Passenger Seating")
+with st.expander ("Maximum number of occupants"):
+    st.write("""
+- **Executive Interior**    
+    - 8 passenger (one per seat) in the cabin    
+    - An optional fit allows two additional infants to be carried at the ferst seating row on the left and right sides
+- **Commuter interior**    
+    - 10 passenger (one per seat) in the cabin
+""")
+    
 
 
 
