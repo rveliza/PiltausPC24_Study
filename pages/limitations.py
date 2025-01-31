@@ -1,6 +1,8 @@
 import streamlit as st
 
 highlight = ":orange-background"
+note = ":blue-background[**NOTE**]"
+warning = ":red-background[**WARNING**]"
 
 st.title("Limitataions")
 
@@ -21,8 +23,9 @@ with st.expander("Documents On Board"):
 ################ AIRPORT LIMITATIONS
 
 st.write("## Airport Limitations")
-    
-st.write(":blue-background[**Note:**] A wet runway is defined as a runway from which the surface is covered with a layer of water less than 1/8 in. (3 mm) in depth or the equivalent amount of a related substance or by a sufficient level of moisture to give a reflective appearance, but without any significant area of standing water.")
+
+with st.expander(f"{note}", expanded=True, icon="📝"):
+    st.write("A wet runway is defined as a runway from which the surface is covered with a layer of water less than 1/8 in. (3 mm) in depth or the equivalent amount of a related substance or by a sufficient level of moisture to give a reflective appearance, but without any significant area of standing water.")
 
 with st.expander("Approved takeoff and landing surface"):
     has_gravel_kit = st.checkbox("Gravel Kit Factiory option installed")
@@ -57,7 +60,8 @@ with st.expander("Maximum tailwind component for takeoff and landing"):
 st.write("---------------")
 st.write("## Advanced Cockpit Environment (ACE)")
 
-st.write(":blue-background[**Note:**] The us of 'PITCH ATTITUDE HOLD' mode recommended during operation in severe turbulence.")
+with st.expander(f"{note}", expanded=True, icon="📝"):
+    st.write("The use of 'PITCH ATTITUDE HOLD' mode is recommended during operation in severe turbulence.")
 
 st.write("#### Automatic Flight Control System")
 st.write("###### General")
@@ -564,4 +568,48 @@ with st.expander("Do not operate the Windshield Emergency heating on ground or w
 st.write("#### Wing inspection Light")
 with st.expander(f"The wing inspection light must be _________ if flying into known icing conditions at {highlight}[night] or if known acing conditions are forecasted at {highlight}[night]"):
     st.write("operational")
+
+############## ICING Limitations
+st.write("___________")
+st.write("## Icing Limitations")
+
+with st.expander(f"{warning}", expanded=True, icon="🚨"):
+    st.write("**THE PILOT SHALL PERIODICALLY CHECK THE LEFT WING UPPER SURFACE ON A REGULAR BASIS WHILE FLYING IN ICING CONDITIONS TO ENSURE THERE IS NO UNUSUAL ICE ACCUMULATION**")
+
+with st.expander("Do not _________ if there are signs of ice, snow or frost on the lifting surfaces."):
+    st.write("takeoff")
+
+with st.expander("If the airplane encounters conditions that are ddetermined to contain _____________ or ___________, the pilot must immediately exit the conditions by changing altitude or course"):
+    st.write("freezing rain / freezing drizzle")
+
+with  st.expander("Do not operate into airports reporting __________ or _________"):
+    st.write("freezing rain / freezing drizzle")
+
+st.write("#### Extended Holding")
+with st.expander ("Extended holding in icing conditions in single bleed source is ____________"):
+    st.write("not allowed")
+
+st.write("#### Use of flaps in Icing Conditions")
+with st.expander("Do not extend the flaps beyond ______ if in icing conditions"):
+    st.write("15$\degree$")
+
+with st.expander("Do not use Flaps ______ for landing in current, active icing conditions"):
+    st.write("33")
+
+with st.expander("Do not retract the flaps below _____, if signs of ice are present on the lifting surfaces"):
+    st.write("8")
+
+with st.expander("The minimum airspeed with flaps retracted in icing conditions is _________ :"):
+    st.write("150 KIAS")
+
+st.write("#### Severe Icing Conditions")
+
+with st.expander("Do not ________ the ________ in severe icing conditions"):
+    st.write("engange / autopilot")
+
+
+st.write("#### Use of SWPS Ice Mode Override")
+with st.expander(" Do not opearte thw ________________ push botton / _______________ rotary selector if there are signs of ice on the wings"):
+    st.write(" SWPS ICE OVRD / SWPS ICE MODE")
+
 
