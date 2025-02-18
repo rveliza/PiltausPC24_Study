@@ -856,4 +856,43 @@ with st.expander("The maximum permissible oil consumption rate is: "):
     st.write(f"{oil_qty}")
 
 
+##################### Operating Altitude
+st.write("## Operating Altitude")
+with st.expander("The maximum operating altitude is: "):
+    altitude = ""
+    altitude_units = st.radio("Units", ['Feet', 'Meters'], label_visibility="collapsed", horizontal=True, key="altitude_oper")
+    if altitude_units == "Feet":
+        altitude = "45,000 ft"
+    else:
+        altitude = "14,716 m"
+    st.write(f"{altitude}")
 
+
+################# Outside Air Temperature
+st.write("## Outside Air Temperature")
+
+oat = ""
+
+oat_temp_units = st.radio("Units", ["Celsius", "Fahrenheit"], horizontal=True, label_visibility="collapsed")
+off_on = st.toggle("off/on", key="oat_temps")
+
+min_oat = ""
+max_oat = ""
+
+
+if oat_temp_units == "Celsius" and off_on:
+    min_oat = "-54$\degree$C"    
+    max_oat = "+50$\degree$C"
+
+if oat_temp_units == "Fahrenheit" and off_on:
+    min_oat = "-65$\degree$F"
+    max_oat = "122$\degree$F"
+
+oat_text = f"""
+    | Description | Limit |
+    | :-: | :-: |
+    | Minimum OAT (Sea Level) | {min_oat} |
+    | Maximum OAT (Sea Level) | {max_oat} |
+"""
+
+st.write(oat_text)
