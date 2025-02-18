@@ -896,3 +896,53 @@ oat_text = f"""
 """
 
 st.write(oat_text)
+
+###################### Oxygen System
+st.write("## Oxygen System")
+st.write("#### General")
+
+with st.expander("Minimum oxygen for dispatch is: "):
+    st.write("680 liters")
+
+with st.expander("Do not use the oxygen saver function below: "):
+    st.write("25,000 feet")
+
+with st.expander("Passenger oxygen masks are limited to a maximum cabin altitude of:"):
+    st.write("40,000 feet")
+
+with st.expander("If installed, do not operate the PBE when the cockipt tempertaure is $\le$:"):
+    pbe_temp_radio = st.radio("PBE Temp", ["Celsius", "Fahrenheit"], key="pbe_temp", horizontal=True, label_visibility="collapsed")
+
+    pbe_temp = "-29$\degree$C"
+
+    if pbe_temp_radio == "Fahrenheit":
+        pbe_temp = "-20$\degree$F"
+
+    st.write(pbe_temp)
+
+with st.expander("For pressurized flight above ____________, a minimum oxygen supply of _______ duration for flight crew and passengers is required"):
+    st.write("25,000 ft MSL / 10 min")
+
+
+with st.expander("After ground cold soak, do not operate the Crew Oxygen Masks press to test / reset button when the cockpit temperature is $\le$:"):
+    temp = st.radio("Temperature", ["Ceslius", "Fahrenheit"], key="soak_temp", horizontal=True, label_visibility="collapsed")
+    soak_temp = "-12$\degree$C"
+    if temp == "Fahrenheit":
+        soak_temp = "-10$\degree$F"
+
+    st.write(soak_temp)
+
+
+st.write("#### High Field Mode")
+with st.expander("For single pilot operations, the pilot is required to use oxygen when the ______________ is active"):
+    st.write("High Field Mode")
+
+with st.expander("For multi pilot operations, at least one pilot is required to use oxygen when the ______________ is active"):
+    st.write("High Field Mode")
+
+
+
+
+
+
+
