@@ -3,6 +3,7 @@ import streamlit as st
 highlight = ":orange-background"
 note = ":blue-background[**NOTE**]"
 warning = ":red-background[**WARNING**]"
+caution = ":orange-background[**CAUTION**]"
 
 st.title("Limitataions")
 
@@ -539,7 +540,7 @@ st.write("---------------")
 st.write("## Ice Protection System")
 st.write("#### Pneumatic Deice Boots")
 
-with st.expander("The inflation of the de-icing boots is note recommended when TAT < ______, unless it is required due to the presence of icing conditions."):
+with st.expander("The inflation of the de-icing boots is not recommended when TAT < ______, unless it is required due to the presence of icing conditions."):
     st.write("""
 
 -40$\degree$C
@@ -942,7 +943,74 @@ with st.expander("For multi pilot operations, at least one pilot is required to 
 
 
 
+########################## Powerplant
+st.write("## Powerplant")
+
+st.write("#### Engine Operating Limitations")
+
+with st.expander(f"{caution}", expanded=True, icon="⚠️"):
+    st.write("When te tailwind component is greater than 10kt, do not exceed 60% N1 engine speed until the aircraft rolling speed is greater than the tailwind component.")
 
 
+with st.expander("Except in an emergency, selection of engine thrust settings greater than NTO is: "):
+    st.write("Prohibited")
 
 
+engine_op_limits = """
+| Operating Condition | Thrust (lb) | N1 (%) | n2 (%) | ITT ($\degree$C) | Oil PRESS (psi) | Oil TEMP ($\degree$C) |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Normal Takeoff  | 3,420 | 104.7 | 100.8 | 855 | 40 - 120 | 10 - 135 |
+| ATR | 3,600 | 104.7 | 100.8 | 855 | 40 - 120 | 10 - 135 |
+| Maximum Cont / Climb |  | 104.7 | 100.8 | 855 | 40 - 120 | 10 - 135 |
+| Ground or Flight Idle (Cont) |  |  |  |  | 30 Min, 120 Max | -40 - 135 |
+| QPM |  |  | 45.4 |  | 30 - 120 | 10 - 135 |
+| Starting |  |  |  | See Fig.  2-1-4 |  | -40 - 135 |
+| Transient High |  | 105.7 (2 Min) | 101.5 (2 Min) | 855 (0 sec) | 130 | 149 |
+| Transient Low |  |  |  |  | 23 |  |
+"""
+
+engine_op_limits_off = """
+| Operating Condition | Thrust (lb) | N1 (%) | n2 (%) | ITT ($\degree$C) | Oil PRESS (psi) | Oil TEMP ($\degree$C) |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Normal Takeoff |  |  |  |  |  |  |
+| ATR |  |  |  |  |  |  |
+| Maximum Cont / Climb |  |  |  |  |  |  |
+| Ground or Flight Idle (Cont) |  |  |  |  |  |  |
+| QPM |  |  |  |  |  |  |
+| Starting |  |  |  |  |  |  |
+| Transient High |  |  |  |  |  |  |
+| Transient Low |  |  |  |  |  |  |
+
+"""
+
+off_on = st.toggle("off/on", key="eng_limits_toggle")
+
+if off_on:
+    st.markdown(engine_op_limits)
+else:
+    st.write(engine_op_limits_off)
+
+with st.expander("""Footnotes:""", expanded=True):
+    st.write("""
+  Footnotes:
+(1) Maximum 5 min.    
+(2) Maximum 10 min (with OEI, otherwise 5 min).    
+(3) Maximum Continuous and maximum climb thrust is obtained when the Thrust Lever Angle
+(TLA) is in the Max Continuous / Climb thrust position. Cruise thrust is obtained when the
+TLA is in the MCT position. Continuous operation is acceptable provided engine limits are not
+exceeded.    
+(4) Minimum oil pressure is 40 psig when operating at or above 80% N2; 30 psig when
+operating below 80% N2.    
+(5) When operating below 80% N2 for up to 5 min.    
+(6) When operating above 80% N2 for up to 5 min.    
+(7) Maximum allowable oil pressure is 130 psig for 5 min maximum.    
+(8) Elevated oil pressure values are typically observed when oil temperature is cold.   
+    """)
+
+st.write("#### Engine Starting Limitations")
+st.write("###### Wind and Time Limitations")
+
+with st.expander(f"{caution}", expanded=True, icon="⚠️"):
+    st.write("For engint starting, point the nose of the aircraft into the wind.  If this is not possible, adhere to the engine start wind limits imntioned below...")
+
+    
