@@ -959,14 +959,14 @@ with st.expander("Except in an emergency, selection of engine thrust settings gr
 engine_op_limits = """
 | Operating Condition | Thrust (lb) | N1 (%) | n2 (%) | ITT ($\degree$C) | Oil PRESS (psi) | Oil TEMP ($\degree$C) |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Normal Takeoff  | 3,420 | 104.7 | 100.8 | 855 | 40 - 120 | 10 - 135 |
-| ATR | 3,600 | 104.7 | 100.8 | 855 | 40 - 120 | 10 - 135 |
-| Maximum Cont / Climb |  | 104.7 | 100.8 | 855 | 40 - 120 | 10 - 135 |
-| Ground or Flight Idle (Cont) |  |  |  |  | 30 Min, 120 Max | -40 - 135 |
+| Normal Takeoff (1)  | 3,420 | 104.7 | 100.8 | 855 | 40 - 120 (4) | 10 - 135 |
+| ATR (2) | 3,600 | 104.7 | 100.8 | 855 | 40 - 120 (4)| 10 - 135 |
+| Maximum Cont / Climb (3) |  | 104.7 | 100.8 | 855 | 40 - 120 (4) | 10 - 135 |
+| Ground or Flight Idle (Cont) |  |  |  |  | 30 Min (4), 120 Max (5)| -40 - 135 |
 | QPM |  |  | 45.4 |  | 30 - 120 | 10 - 135 |
 | Starting |  |  |  | See Fig.  2-1-4 |  | -40 - 135 |
-| Transient High |  | 105.7 (2 Min) | 101.5 (2 Min) | 855 (0 sec) | 130 | 149 |
-| Transient Low |  |  |  |  | 23 |  |
+| Transient High |  | 105.7 (2 Min) | 101.5 (2 Min) | 855 (0 sec) | 130 (6 and 7) | 149 (5) |
+| Transient Low |  |  |  |  | 23  (5)|  |
 """
 
 engine_op_limits_off = """
@@ -992,7 +992,6 @@ else:
 
 with st.expander("""Footnotes:""", expanded=True):
     st.write("""
-  Footnotes:
 (1) Maximum 5 min.    
 (2) Maximum 10 min (with OEI, otherwise 5 min).    
 (3) Maximum Continuous and maximum climb thrust is obtained when the Thrust Lever Angle
@@ -1013,4 +1012,40 @@ st.write("###### Wind and Time Limitations")
 with st.expander(f"{caution}", expanded=True, icon="⚠️"):
     st.write("For engint starting, point the nose of the aircraft into the wind.  If this is not possible, adhere to the engine start wind limits imntioned below...")
 
-    
+start_limits_table = """
+| Condition | Limits | 
+| :-: | :-: | 
+| Maximum tailwind component for engine start | 20 kt (estimated steady wind conditions  |
+| Maximum crosswind component for engine start | 25 kt tower wind |
+| Maximum time to Light-Off for engine start (1) | 12 sec (2) |
+| Minimum oil temperature for battery engine start | -40$\degree$C (3 and 4) |
+| Before left engine start | Main passenger door and cargo door must be clsoed and secured |
+"""
+
+start_limits_table_off = """
+| Condition | Limits | 
+| :-: | :-: | 
+| Maximum tailwind component for engine start |  |
+| Maximum crosswind component for engine start |  |
+| Maximum time to Light-Off for engine start (1) |  |
+| Minimum oil temperature for battery engine start |  |
+| Before left engine start |  |
+"""
+
+off_on = st.toggle("off/on", key="eng_limits_start_table")
+
+if off_on:
+    st.write(start_limits_table)
+else:
+    st.write(start_limits_table_off)
+
+with st.expander("""Footnotes:""", expanded=True):
+    st.write("""
+(1) Higher minimum throttle up speeds up to 60% N1 may be required if tailwind component    
+exceeds 10 kt.    
+(2) Time to light-off is defined as the time after signal to the igniter is indicated and increase in ITT is seen.    
+(3) For ground start only. For In Flight starter assisted and windmill starts, refer to AFM Section 3 Non-annunciated Procedures.    
+(4) For limitations of “Minimum Ni-Cd / Li-Ion battery temperature for battery engine start”,
+refer to Battery Limitations.
+    """)
+
