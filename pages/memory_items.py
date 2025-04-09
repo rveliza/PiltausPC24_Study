@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("Memory Items")
 
-with st.expander(":red-background[EMERGENCY DESCENT]"):
+with st.expander(":red-background[EMERGENCY DESCENT] - * Non Annunciated"):
     st.markdown("""
 1. Crew oxygen Maskes - DON / 100% / Establish COMM
 2. PASSENGER OXYGEN - ON, instruct passengers to don drop down masks
@@ -11,7 +11,7 @@ with st.expander(":red-background[EMERGENCY DESCENT]"):
 5. AIRBRAKE lever - OUT
 """)
     
-with st.expander(":red-background[ENGINE FIRE ON-GROUND / TAIL PIPE FIRE]"):
+with st.expander(":red-background[ENGINE FIRE ON-GROUND / TAIL PIPE FIRE] * Non Annunciated"):
     st.markdown("""
 *If during start, engine fire detector senses a temperature below 510$\degree$C or else engine fire is indicated by ground personnel.*    
 1. THRUST LEVER - IDENTYFY / IDLE
@@ -20,7 +20,7 @@ with st.expander(":red-background[ENGINE FIRE ON-GROUND / TAIL PIPE FIRE]"):
 4. FIRE XTING pushbutton - Push to activate
 """)
     
-with st.expander(":red-background[ENGINE FIRE OR FAILURE DURING TAKEOFF]"):
+with st.expander(":red-background[ENGINE FIRE OR FAILURE DURING TAKEOFF] * Non Annunciated"):
     st.markdown("""
 *Airspeed below $V_{1}$*
 1. Rejected Takeoff 3-NAE-19 - Accomplish
@@ -32,13 +32,13 @@ with st.expander(":red-background[ENGINE FIRE OR FAILURE DURING TAKEOFF]"):
 4. L/G - When positive rate of climb - UP
 """)
     
-with st.expander(":red-background[REJECTED TAKEOFF]"):
+with st.expander(":red-background[REJECTED TAKEOFF] * Non Annunciated"):
     st.markdown("""
 1. THRUST LEVERS - IDLE
 2. BRAKES - Max Braking / As Required
 """)
     
-with st.expander(":red-background[FIRE, SMOKE OR FUMES IN COCKPIT / CABIN]"):
+with st.expander(":red-background[FIRE, SMOKE OR FUMES IN COCKPIT / CABIN] * SMOKE Tab"):
     st.markdown("""
 1. CREW OXYGEN MASK - DON / select EMGCY / Vent valve open
 2. Smoke goggles - DON
@@ -49,7 +49,7 @@ with st.expander(":red-background[FIRE, SMOKE OR FUMES IN COCKPIT / CABIN]"):
 """)
     
     
-with st.expander(":red-background[EMERGENCY EVACUATION]"):
+with st.expander(":red-background[EMERGENCY EVACUATION] * EMERG EVAC Tab"):
     st.markdown("""
 1. PARK BRAKE - Set
 2. ATC / distress message - Notify
@@ -102,7 +102,7 @@ with st.expander(":red-background[L/R ENGINE FIRE]"):
 """)
     
     
-with st.expander(":orange-background[AFCS ABNORMAL DISCONNECT]"):
+with st.expander(":orange-background[AFCS ABNORMAL DISCONNECT] * Non Annunciated"):
     st.markdown("""
 *Indication: Flashing :red['AP'] on PFD and continuous 'Cavalry Charge' aural warning*
 1. Airplane control wheel - Grasp firmly and regain aircraft control
@@ -113,19 +113,19 @@ with st.expander(":orange-background[AFCS ABNORMAL DISCONNECT]"):
 """)
     
 
-with st.expander(":orange-background[ENGINE HOT START ON GROUND]"):
+with st.expander(":orange-background[ENGINE HOT START ON GROUND] * Non Annunciated"):
     st.markdown("""
 *Indications for hot start: Rapidly rising ITT approaching engine limits of 1,000$\degree$C or ITT hanging between 900$\degree$C and 1,000$\degree$C for 15 sec.*
 1. Engine Switch - OFF
 """)
     
-with st.expander(":orange-background[ENGINE HUNG START ON GROUND]"):
+with st.expander(":orange-background[ENGINE HUNG START ON GROUND] * Non Annunciated"):
     st.markdown("""
 *Indications: engine fails to accelerate for > 30 sec*
 1. Engine Switch - OFF
 """)
     
-with st.expander(":orange-background[SWPS INADVERTENT PUSHER OPERATION]"):
+with st.expander(":orange-background[SWPS INADVERTENT PUSHER OPERATION] * Non Annunciated"):
     st.markdown("""
 *Non-commanded pusher operation, rapid nose-down motion*    
 :red-background[**WARNING: NATURAL STALLS ARE NOT PREVENTED WITH THE STICK PUSHER INOPERATIVE. STALLS MUST BE AVOIDED WHEN THE STICK PUSHER IS INOPERATIVE**]
@@ -133,7 +133,7 @@ with st.expander(":orange-background[SWPS INADVERTENT PUSHER OPERATION]"):
 2. AP disconnect button - Press and hold continuously
 """)
     
-with st.expander(":red-background[TCAS RESOLUTION ADVISORY]"):
+with st.expander(":red-background[TCAS RESOLUTION ADVISORY * FAS Message List]"):
     st.markdown("""
 *Accompanied by audio commands for climb, descend, level off or maintain vertical speed.*    
 1. Autopilot - Use yoke quick disconnect if AP enganged
@@ -143,3 +143,46 @@ with st.expander(":red-background[TCAS RESOLUTION ADVISORY]"):
 4. Aircraft - Return to previously assigned altitude and advice ATC    
                       -- END --
 """)
+    
+with st.expander("RH ENG START"):
+    st.markdown("""
+To start the RH Engine:
+1. R engine switch rotate to RUN
+2. Confirm R Booster pump running and no FUEL PRESSURE CAS messages appear
+3. R START PRESS
+Monitor start sequence as follows:
+1. When pressing start button "START" will appear "ON" on the PFD
+2. At about 10%, N$_{2}$ "START" and "IGN" is illuminated in inverse video.  Check N$_{1}$ is increasing
+3. Observe light-up and engine parameters until "IDL" is reached
+4. Depending on ambient conditions "START" and "IGN" extinguish at approximately 45% - 50% of N$_{2}$""")
+    
+with st.expander("LH ENG START"):
+    st.markdown("""
+1. LH Engine Start
+    * Start LH engine accordingly
+    
+##### Note: The right engine must exit QPM and set to Ground Idle before Left Engine start""")
+    
+with st.expander("ENGINE APPROXIMATE GND IDLE VALUES"):
+    st.markdown("""   
+* N$_{1}$: 25%
+* ITT: 400 $\degree$C    
+* N$_{2}$: 53.4%
+* FF: 160 - 180 lbs
+                
+#### Confirm GEN 2 takes over and is supplying the aircraft body 
+                
+##### Note: If TAT or reported OAT is < 10$_\degree$C and visible signs of moisure are present then set the IPS rotary switch to AUTO/NAI""")
+    
+
+with st.expander("CLIMB"):
+    st.markdown("""
+1. Gear - UP    
+    * Confirm Lever Up and Lights Out on System Summary Page"    
+2. Yaw Damper - ON    
+    * Confirm on FMA
+3. Flaps - UP    
+    * Confirm lever at 0 and indication on System Summary Page
+4. Thrust - MCT
+    * Thrust Levers back at MCT gate within five min after setting T/O
+    * Verify MCT indication on both engine PDF indications""")
