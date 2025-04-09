@@ -1113,4 +1113,44 @@ st.write("###### Operating in Freezing Fog")
 with st.expander("Do not operate the NAI in freezing fog with TAT < _______"):
     st.write("15$\degree$C")
 
+################################# RVSM ####################################
 
+st.write("## Reduced Vertical Separation Minimum (RVSM)")
+
+with st.expander("The following equipment must be operational to enter RVSM airspace:"):
+    st.write("""
+- Two primary Air Data Systems (ADS)
+- One flight controller KMC 9200A with altitude pre-selector
+- One automatic flight control syste
+- One altitude reporting transponder KXP 2290A""")
+    
+########################### SECONDARY FLIGHT CONTROL SYSTEM ####################
+st.write("## Secondary Flight Control System")
+st.write("#### Airbrake")
+
+with st.expander("Do not attempt to land with the airbrake ____________"):
+    st.write("extended")
+
+with st.expander("Use of the airbrake is permitted when during an approach, provided that the aircraft is on a stable approach and the airbrake is stowed no later than __________ AGL:"):
+    st.write("""50 ft""")
+
+st.write("#### Flaps")
+with st.expander("Do not operate the flaps in flight if the aircraft altitude is > ________"):
+    st.write("20,000 ft")
+
+with st.expander("Landing with Flaps _____ and _____ is prohibited unless flaps have failed"):
+    st.write("0$\degree$/ 8$\degree$")
+
+st.write("#### Stab Trim")
+with st.expander("Do not use _________ stab trim unless the ___________ stab trim has failed"):
+    st.write("secondary / primary")
+
+
+##################### Water Waste System #############################
+st.write("## Water Waste System")
+
+with st.expander("If installed, do not operate the Water Waste System in flight or in ground if the cabin temperature is <= _______"):
+    st.write("2$\degree$C / 36$\degree$F")
+
+with st.expander("If installed, do not service the Water Waste System in _________ conditions.  If servicing is required, the Water Waste System must be serviced in a heated hangar"):
+    st.write("freezing")
