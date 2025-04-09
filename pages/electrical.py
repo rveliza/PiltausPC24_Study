@@ -6,7 +6,8 @@ with st.expander("Essential Bus"):
     st.markdown("""
 * Pilot PFD - DU 1
 * Upper MFD - DU 2 
-* Captain side PFD controller""")
+* Captain side PFD controller
+* Cockpit Voice / Flight Data Recorder""")
     
 
 with st.expander("EPDU 2"):
