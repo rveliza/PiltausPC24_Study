@@ -1049,3 +1049,30 @@ exceeds 10 kt.
 refer to Battery Limitations.
     """)
 
+st.write("#### Quiet Power Mode")
+with st.expander("Do not operate the _____ during QPM operation"):
+    st.write("NAI")
+
+st.write("QPM operation is permitted only if all the requirements listed below are fullfilled:")
+
+visible_moisture = True
+idle_time = st.checkbox("Aircraft at Ground idle N2 (stabilized operation) for at least 2 minutes")
+brake_on = st.checkbox("Aircraft is stationary with Park Brake ON")
+ground_ice = st.checkbox("Ground icing conditions are NOT present")
+temp = st.radio("Temperature", ["Above 10$\degree$C", "Below 10$\degree$C"], horizontal=True, label_visibility="visible", key="temp_qpm")
+if  temp == "Below 10$\degree$C":
+    moisture = st.checkbox("Visible moisture not present")
+    if moisture:
+        visible_moisture = True
+    else:
+        visible_moisture = False
+
+crew_seated = st.checkbox("A flight crew memeber is seated at the controls with a lap belt fastened")
+xwind = st.checkbox("Crosswind / tailwind are less than 20 kt (Average)")
+r_engine = st.checkbox("Only the right engine is to be operated in QPM")
+
+st.write(f"Idle Time: {idle_time}, Brake On {brake_on}, Temperauter: {temp}, Visible Moisture: {visible_moisture}, Crew Seated: {crew_seated}, Xwind: {xwind}, R Engine: {r_engine}")
+if idle_time and brake_on  and visible_moisture and crew_seated and xwind and r_engine:
+    st.success("CLEAR TO ACTIVATE QPM")
+else:
+    st.warning("DO NOT ACTIVATE QPM")
