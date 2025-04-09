@@ -110,3 +110,11 @@ with st.expander("Certification"):
 with st.expander("Maximum passengers (based on configuration)"):
     st.markdown("""
 * 10 passengers""")
+    
+with st.expander("Aircraft manuals that must be onboard"):
+    st.markdown("""
+* Aircraft Flight Manual (AFM) Volume 1 - Printed
+* Aircraft Flight Manual (AFM) Volume 2 - Printed
+* QRH - Printed or electronic
+* ACE$^{tm}$ Pilot Guide - Printed or electronic
+* FCOM - Printed or electronic """)
