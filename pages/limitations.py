@@ -1071,8 +1071,46 @@ crew_seated = st.checkbox("A flight crew memeber is seated at the controls with 
 xwind = st.checkbox("Crosswind / tailwind are less than 20 kt (Average)")
 r_engine = st.checkbox("Only the right engine is to be operated in QPM")
 
-st.write(f"Idle Time: {idle_time}, Brake On {brake_on}, Temperauter: {temp}, Visible Moisture: {visible_moisture}, Crew Seated: {crew_seated}, Xwind: {xwind}, R Engine: {r_engine}")
 if idle_time and brake_on  and visible_moisture and crew_seated and xwind and r_engine:
     st.success("CLEAR TO ACTIVATE QPM")
 else:
     st.warning("DO NOT ACTIVATE QPM")
+
+st.write("###### During QPM operation:")
+
+with st.expander("The thrust lever must remain at ______"):
+    st.write("IDLE")
+
+with st.expander("The generator load must not exceed _______"):
+    st.write("250 A")
+
+with st.expander("The right engin must exit QPM and set to Ground Idle before ________________"):
+    st.write("the left engine is started")
+
+
+
+st.write("#### Engine Limitation in Icing Conditions")
+st.write("###### Use of Nacelle Anti-ice")
+
+with st.expander("The NAI must must be switched of for all ground operations when:"):
+    st.write("""
+- Visible mouisture and indicated SAT or reported OAT <= 10$\degree$C, or
+- Ice or other frozen precipitation is observed adhering to any part of the engine inlet""")
+    
+with st.expander("The NAI must be switched on for climb, cruise, descent under the following conditions:"):
+    st.write("""
+- Visible moisture witht TAT <= 10$\degree$C, or
+- Flight through ice crystals, or
+- Any time aci accumulation is observed on the airframe""")
+    
+with st.expander("Do not operate the NAI when TAT is:"):
+    st.write("> than 10$\degree$C")
+with st.expander(f"{note}", expanded=True, icon="📝"):
+    st.write("""Turning NAI on and off in quick succession in flight may cause a “No Dispatch” annunciation. Therefore, it is recommended that NAI remains on for a minimum of 2 minutes when activated, to allow the Tt2 sensor heat to stabilize and all moisture to be cleared from the probe""")
+
+
+st.write("###### Operating in Freezing Fog")
+with st.expander("Do not operate the NAI in freezing fog with TAT < _______"):
+    st.write("15$\degree$C")
+
+
