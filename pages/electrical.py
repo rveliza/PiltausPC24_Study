@@ -20,7 +20,7 @@ with st.expander("Batteries"):
 
 col1, col2 = st.columns(col_settings)
 with col1:
-    st.image("images/bat_1_sw.png", use_column_width=True)
+    st.image("images/bat_1_sw.png", use_container_width=True)
 with col2:
     with st.expander("BAT 1 Switch"):
         st.markdown("""
@@ -31,7 +31,7 @@ Bat 1 is in the left nose bay and provides power to the left and essential busse
         
 col1, col2 = st.columns(col_settings)
 with col1:
-    st.image("images/bat_2_sw.png", use_column_width=True)
+    st.image("images/bat_2_sw.png", use_container_width=True)
 with col2:
     with st.expander("BAT 2 Switch"):
         st.markdown("""
@@ -55,7 +55,7 @@ with col2:
 col1, col2 = st.columns(col_settings)
 with col1:
 
-    st.image("images/gen_2_sw.png", use_column_width=True)
+    st.image("images/gen_2_sw.png", use_container_width=True)
 with col2:
     with st.expander("GEN 2 Switch"):
         st.markdown("""
@@ -78,7 +78,7 @@ gpu_data = {
 
 col1, col2 = st.columns(col_settings)
 with col1:
-    st.image(gpu_data[off_avail_on]["image"], use_column_width=True)
+    st.image(gpu_data[off_avail_on]["image"], use_container_width=True)
 with col2:
     with st.expander(gpu_data[off_avail_on]["title"], expanded=True):
         st.markdown(gpu_data[off_avail_on].get("desc", ""))
