@@ -42,7 +42,6 @@ with st.expander("Cockpit Voice / Flight Data Recorder"):
 * 20 hours of ARINC 717 data """)
     
 st.write("## Lights and Switches")
-st.write("#### CVR TEST/ERASE")
 
 col1, col2 = st.columns(cols_settings)
 with col1:

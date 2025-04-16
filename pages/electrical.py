@@ -314,7 +314,10 @@ with st.expander("Essential Bus"):
 * Pilot PFD - DU 1
 * Upper MFD - DU 2 
 * Captain side PFD controller
-* Cockpit Voice / Flight Data Recorder""")
+* Cockpit Voice / Flight Data Recorder
+* KMA 29 audio panel 1
+* XPDR 1
+* GPS 1""")
     
 
 with st.expander("EPDU 2"):
@@ -324,6 +327,20 @@ with st.expander("EPDU 2"):
 * Copilot side PFD controller
 * Cursor Control Device - CCD
 * Electronic Stanby Instrument System EPDU2""")
+    
+with st.expander("Left Bus"):
+    st.markdown("""
+* SATCOM
+* DME1
+""")
+    
+with st.expander("Right Bus"):
+    st.markdown("""
+* KMA 29 audio panel 2
+* DME2 if installed
+* XPDR 2
+* GPS 2
+""")
     
 st.write("## Question Bank")
 
