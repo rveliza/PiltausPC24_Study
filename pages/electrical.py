@@ -317,7 +317,11 @@ with st.expander("Essential Bus"):
 * Cockpit Voice / Flight Data Recorder
 * KMA 29 audio panel 1
 * XPDR 1
-* GPS 1""")
+* GPS 1
+* External Lights:
+    * Left inboard landing light
+    * Left inboard taxi light
+    * Wing inspection light""")
     
 
 with st.expander("EPDU 2"):
@@ -342,6 +346,17 @@ with st.expander("Right Bus"):
 * GPS 2
 """)
     
+with st.expander("Battery 1 direct bus"):
+    st.write("""
+* Welcome lights
+* Ground equipment compartment""")
+    
+with st.expander("Battery 2 direct bus"):
+    st.write("""
+* Baggage Lights
+* refuel / defuel compartment""")
+
+###################### QUESTION BANK
 st.write("## Question Bank")
 
 with st.expander("Battery 2 is used for PDC mode.  True of False?: "):
