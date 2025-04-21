@@ -322,7 +322,9 @@ with st.expander("Essential Bus"):
     * Left inboard landing light
     * Left inboard taxi light
     * Wing inspection light
-* Flaps - via FLAPS EMER PWR btn""")
+* Rudder Travel Limiter
+* Flaps - via FLAPS EMER PWR btn
+* Pitch Trim - Channe1 1""")
     
 
 with st.expander("EPDU 2"):
@@ -337,6 +339,7 @@ with st.expander("Left Bus"):
     st.markdown("""
 * SATCOM
 * DME1
+* Spoliers
 """)
     
 with st.expander("Right Bus"):
@@ -345,7 +348,8 @@ with st.expander("Right Bus"):
 * DME2 if installed
 * XPDR 2
 * GPS 2
-* Flaps
+* Flaps - via EPDU 4
+* Spoilers
 """)
     
 with st.expander("Battery 1 direct bus"):

@@ -31,7 +31,62 @@ with st.expander("Rudder"):
     * WOW at landing signals the UMS to drive the rudder limiter actuator to the full +/-\$degree$ position where it remains through removal of electrical power from the aircraft
     * 2 static dischargers
 """)
+    
+st.write("## Secondary Flight Controls")
+st.write("Trims, Flaps, Spoilers")
 
+st.image("images/flaps_diag.png")
+
+with st.expander("Flap System"):
+    st.markdown("""
+* Right Bus Powered
+* Electromechanically actuated
+* Double slotted
+* Main and auxiliary flap panels
+    * Two main flap panels are interconnected by a torque tube.
+    * Each flap panel group incorporates inboard, middle and outboard hinges.
+    * The inboard hinge supports the main and auxiliary flap panels
+    * Outboard hinge supports only the main flap panel
+    * Flap actuators are located at the inboard and outboard hinges
+* Full travel time for full actuator rotation of 94.3$\degree$ is 17.2 seconds in either direction.
+* UMS channel DCPU 2A is for control
+* DCPU 2b is the monitoring channel:
+    * Loss of motion
+    * Uncommanded movement
+    * Skew
+    * Asymmetry
+                
+* Flaps Inhibit
+    * VFE exceedance
+        * Takeoff - 200 kt
+        * Landing = 175 kt
+        * Failed pitch trim - 160 kt
+    * Flap control lever in intermediate position for more than 3 seconds.
+""")
+    
+st.image("images/spoilers_diag.png")
+
+with st.expander("Spoiler System"):
+    st.markdown("""
+* Four spoiler panels per side, each with its own actuator.
+    * Two inner panels - Ground Spoilers
+        * Operate only in ground
+    * Two outer panels - Multi Function Spoilers
+        * Airbrakes
+        * Low speed roll control enhancement
+        * Lift dump during landing rollout and during RTO.
+    * Electrical power for the spoiler system is supplied by both the left and the right buses to ensure that at least partial capability remains available in case of loss of power to either bus.
+""")
+    
+st.image("images/pitch_trim_diag.png")
+
+with st.expander("Pitch Trim System"):
+    st.markdown("""
+* Range: 10$\degree$ up - 5$\degree$ down
+* Pitch Trim Actuator:
+    * Motor 1 - Primary pitch trim (channel 1) - Essential Bus
+    * Motor 2 - Secondary pitch trim (channel 2) - EPDU 4
+""")
 
 st.write("## Lights and Switches")
 
@@ -74,8 +129,8 @@ with col2:
 flap_bt_pos = st.radio("Flaps Emerg Pwer PB", options=["OFF", "FLAPS", "ON"], label_visibility="collapsed", horizontal=True)
 
 emer_flap_selection = {
-    "OFF": {"img": "images/flaps_emer_pb_off.png", "desc": "Normal electrical power supply to the flaps system via the right bus"},
-    "FLAPS": {"img": "images/flaps_emer_pb_flaps.png", "desc": "FLAPS automatically illuminates to indicate only the essential bus is providing power, but is not connected to the flaps system"},
+    "OFF": {"img": "images/flaps_emer_pb_off.png", "desc": "Normal electrical power supply to the flaps system via the right bus - EPDU 4"},
+    "FLAPS": {"img": "images/flaps_emer_pb_flaps.png", "desc": "Emergency Mode, emergency contactors EC1 and EC2 have operated and only the essential bus is powered. FLAPS automatically illuminates to indicate only the essential bus is providing power, but is not connected to the flaps system"},
     "ON": {"img": "images/flaps_emer_pb_on.png", "desc": "When the pushbutton is pressed, ON illuminates indicating the essential bus is connected to the flaps system.  This allows emergency extension of the flaps."}
 }
 col1, col2 = st.columns(cols_settings)
@@ -131,12 +186,13 @@ with col2:
         - MFS auto rettract to 0$\degree$
         - AIRBRK annunciator displays in black with cyan background
         - CAS Takeoff CONFIG in cyan
-    - Moving the control wheel more than 27 $\dgree$ results in a bliendig or mixing of the roll assist and airbrakes as follows on the downward wing:
+    - Moving the control wheel more than 27 $\dgree$ results in a blendig or mixing of the roll assist and airbrakes as follows on the downward wing:
         - Flaps 8 or 15 - Roll assist moves MFS smoothly
         - Flapps 33 -MFS commands are on a UMS for landing
 * OUT
     - MFS extend to 35$\degree$
     - AIRBRK annunciator displays in black with green background
+    * 4.5 seconds / 8$\degree$ per second.
                     """)
         
 with st.expander("Airbrake - Throttles T/O"):
@@ -167,8 +223,9 @@ with st.expander("Roll Assist"):
     st.markdown("""
     * MFS exxtend between 0$\degree$ and 35$\degree$ on the donward moving wing when:
         * Control wheel more than 27$\degree$
-        * Airpees < 175 kt
+        * Airpeed < 175 kt
         * Flaps extended
+    * The full deflection of 35$\degree$ on the extended MFS is reached when control wheel deflection reaches 72$\degree$ at speeds < 140 kt.
 """)
     
 with st.expander("Blended Roll Assist and Airbrake"):
@@ -188,6 +245,11 @@ with st.expander("Lift Dump"):
     * MFS and GS extend fully to 35 $\degree# and 50$\degree$ and remain unitl speed < 45 kt.
     * Lift Dump annunciator displays
 * Lift dump is also commanded when a rejected takeoff is activated above 45 kt by movint the trottles to IDLE
+* Sequence:
+    * Outer MFS: Signalled on touchdown. Deploys aprox in 0.75 secs.
+    * Outer GS: Signalled on touchdown.  Deploys aprox in 2.2 seconds
+    * Inner MFS: Signalled 2 seconds after touchdown.  Deploys aprox in 0.75 secs.
+    * Inner GS: Signalled 2 seconds after touchdownd Deploys aprox in 1 second.
 """)
     
 with st.expander("Lift Dump - Takeoff"):
@@ -196,6 +258,11 @@ with st.expander("Lift Dump - Takeoff"):
     * Automatic termination of the lift dump function
     * MFS and GS retract to 0$\degree$
     * Lift dump annunciator extinguises
+""")
+    
+with st.expander("Pitch Trim Inhibit"):
+    st.markdown("""
+When the primary pitch trim system fails, automatic pitch trim compensation for airbrake operation is not available. When this is the case, airbrake operation is inhibited above 250 kt and the airbrakes cannot be extended
 """)
     
 
