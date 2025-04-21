@@ -321,7 +321,8 @@ with st.expander("Essential Bus"):
 * External Lights:
     * Left inboard landing light
     * Left inboard taxi light
-    * Wing inspection light""")
+    * Wing inspection light
+* Flaps - via FLAPS EMER PWR btn""")
     
 
 with st.expander("EPDU 2"):
@@ -344,6 +345,7 @@ with st.expander("Right Bus"):
 * DME2 if installed
 * XPDR 2
 * GPS 2
+* Flaps
 """)
     
 with st.expander("Battery 1 direct bus"):

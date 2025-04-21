@@ -70,6 +70,17 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
+    st.image("images/light_recog_sw.png", use_column_width=True)
+with col2:
+    with st.expander("RECOG / PULSE"):
+        st.markdown("""
+* RECOG: recognition lights in each wing tip operate continuously (2 LED's).  TCAS function is inhibitted.
+* PULSE: if installed, the LH and RH recognition lights pulse alternately
+* OFF: a TCAS alert will cause the recognition lights to flash
+                    """)   
+
+col1, col2 = st.columns(cols_settings)
+with col1:
     st.image("images/light_emer_sw.png", use_column_width=True)
 with col2:
     with st.expander("EMER LTS"):
@@ -78,18 +89,7 @@ with col2:
 * ARM: Arms the system for automatic operation.  A loss of electrical power activates the emergency lighting system and remains active fro approximately five minutes
 * ON: Switches the lights on, can be used for testing the system
                     """)     
-        
-
-col1, col2 = st.columns(cols_settings)
-with col1:
-    st.image("images/light_recog_sw.png", use_column_width=True)
-with col2:
-    with st.expander("RECOG / PULSE"):
-        st.markdown("""
-* RECOG: recognition lights in each wing tip operate continuously (2 LED's).  TCAS function is inhibitted.
-* PULSE: if installed, the LH and RH recognition lights pulse alternately
-* OFF: a TCAS alert will cause the recognition lights to flash
-                    """)     
+          
         
 
 
