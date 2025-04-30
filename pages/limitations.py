@@ -29,7 +29,7 @@ with st.expander(f"{note}", expanded=True, icon="📝"):
     st.write("A wet runway is defined as a runway from which the surface is covered with a layer of water less than 1/8 in. (3 mm) in depth or the equivalent amount of a related substance or by a sufficient level of moisture to give a reflective appearance, but without any significant area of standing water.")
 
 with st.expander("Approved takeoff and landing surface"):
-    has_gravel_kit = st.checkbox("Gravel Kit Factiory option installed")
+    has_gravel_kit = st.checkbox("Gravel Kit Factory option installed")
 
     surface_text = f"""
     - Dry and wet paved runways
@@ -104,12 +104,12 @@ with st.expander("Approach with Vertical Guidance in VGP"):
 with st.expander("Coupled ILS Approach"):
     st.write("""
 - The autopilot, yaw damper and autothrottle must be disengaged below 200 ft AGL
-- Glide slope must be less than 4.5 $\degree$""")
+- Glide slope must be less than 4.5$\degree$""")
     
 with st.expander("Non-Precision Approach, Circling Approach and Visual Approach"):
     st.markdown("""
 - Airspeed must be < 150 KIAS
-- Vertical speed must be < 1,5000 ft/min
+- Vertical speed must be < 1,500 ft/min
 - The autopilot, yaw damper and autothrottle must be disengaged below 400 gt AGL
 """)
     
@@ -561,7 +561,7 @@ with st.expander("The WAI is inhibited in these conditions:"):
 * Aircraft on ground
 """)
     
-with st.expander("Do not operate the WAI system with a TAT of more than __  ___, unless required by the presence of icing conditions."):
+with st.expander("Do not operate the WAI system with a TAT of more than ___, unless required by the presence of icing conditions."):
     st.write("10$\degree$C")
 
 st.write("#### Windshield Heating System")
@@ -569,7 +569,7 @@ with st.expander("Do not operate the Windshield Emergency heating on ground or w
     st.write("10$\degree$C")
 
 st.write("#### Wing inspection Light")
-with st.expander(f"The wing inspection light must be _________ if flying into known icing conditions at {highlight}[night] or if known acing conditions are forecasted at {highlight}[night]"):
+with st.expander(f"The wing inspection light must be _________ if flying into known icing conditions at {highlight}[night] or if known icing conditions are forecasted at {highlight}[night]"):
     st.write("operational")
 
 ############## ICING Limitations
@@ -612,7 +612,7 @@ with st.expander("Do not ________ the ________ in severe icing conditions"):
 
 
 st.write("#### Use of SWPS Ice Mode Override")
-with st.expander(" Do not operate the ________________ push botton / _______________ rotary selector if there are signs of ice on the wings"):
+with st.expander(" Do not operate the ________________ push botton 'or' _______________ rotary selector if there are signs of ice on the wings"):
     st.write(" SWPS ICE OVRD / SWPS ICE MODE")
 
 
@@ -822,7 +822,7 @@ with st.expander ("Maximum number of occupants"):
     st.write("""
 - **Executive Interior**    
     - 8 passenger (one per seat) in the cabin    
-    - An optional fit allows two additional infants to be carried at the ferst seating row on the left and right sides
+    - An optional fit allows two additional infants to be carried at the first seating row on the left and right sides
 - **Commuter interior**    
     - 10 passenger (one per seat) in the cabin
 """)
@@ -957,6 +957,8 @@ st.write("#### Engine Operating Limitations")
 with st.expander(f"{caution}", expanded=True, icon="⚠️"):
     st.write("When the tailwind component is greater than 10kt, do not exceed 60% N1 engine speed until the aircraft rolling speed is greater than the tailwind component.")
 
+with st.expander("The engine is limited to ______ seconds of continuous flight at zero and/or negative G.  During this time it is acceptable for engine oil pressure to indicate zero: "):
+    st.write("10")
 
 with st.expander("Except in an emergency, selection of engine thrust settings greater than NTO is: "):
     st.write("Prohibited")
@@ -967,7 +969,7 @@ engine_op_limits = """
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | Normal Takeoff (1)  | 3,420 | 104.7 | 100.8 | 855 | 40 - 120 (4) | 10 - 135 |
 | ATR (2) | 3,600 | 104.7 | 100.8 | 855 | 40 - 120 (4)| 10 - 135 |
-| Maximum Cont / Climb (3) |  | 104.7 | 100.8 | 855 | 40 - 120 (4) | 10 - 135 |
+| Maximum Cont / Climb (3) |  | 104.7 | 100.8 | 835 | 40 - 120 (4) | 10 - 135 |
 | Ground or Flight Idle (Cont) |  |  |  |  | 30 Min (4), 120 Max (5)| -40 - 135 |
 | QPM |  |  | 45.4 |  | 30 - 120 | 10 - 135 |
 | Starting |  |  |  | See Fig.  2-1-4 |  | -40 - 135 |
@@ -1016,7 +1018,7 @@ st.write("#### Engine Starting Limitations")
 st.write("###### Wind and Time Limitations")
 
 with st.expander(f"{caution}", expanded=True, icon="⚠️"):
-    st.write("For engint starting, point the nose of the aircraft into the wind.  If this is not possible, adhere to the engine start wind limits imntioned below...")
+    st.write("For engine starting, point the nose of the aircraft into the wind.  If this is not possible, adhere to the engine start wind limits mentioned below...")
 
 start_limits_table = """
 | Condition | Limits | 
