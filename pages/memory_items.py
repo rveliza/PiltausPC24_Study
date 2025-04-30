@@ -2,9 +2,9 @@ import streamlit as st
 
 st.title("Memory Items")
 
-with st.expander(":red-background[EMERGENCY DESCENT] - * Non Annunciated"):
+with st.expander(":red-background[EMERGENCY DESCENT] * Non Annunciated"):
     st.markdown("""
-1. Crew oxygen Maskes - DON / 100% / Establish COMM
+1. Crew oxygen Masks - DON / 100% / Establish COMM
 2. PASSENGER OXYGEN - ON, instruct passengers to don drop down masks
 3. SEAT BELTS - ON
 4. THRUST Levers - IDLE

@@ -86,6 +86,12 @@ st.write("###### Take Off")
 with st.expander("Minimum engagement height of the autopilot after take-off is:"):
     st.write("400 feet AGL")
 
+with st.expander("Minimum engagement of yaw damper after take-off is:"):
+    st.write("50 feet AGL")
+
+with st.expander("Landing gear must be selected up prior to _____ engagement:"):
+    st.write("YD")
+
 
 st.write("###### Approach / Landing Minumum Usage Height")
 
@@ -123,7 +129,7 @@ with st.expander("Do not operate the Weather Radar if:"):
 st.write("#### INAV Map")
 with st.expander("Do not use the INAV map for flight operations if:"):
     st.markdown("""
-- The INAV topographical map is the primary source of davigation reference, or
+- The INAV topographical map is the primary source of navigation reference, or
 - The display of airspace areas is the sole airspace reference
 """)
     
@@ -357,7 +363,7 @@ st.write(f"""
 ################## Door and Emergency Exit
 st.write("---------------")
 st.write("## Door and Emergency Exit")
-st.write("#### Forward Airstar Limitation")
+st.write("#### Forward Airstair Limitation")
 with st.expander("Do not allow more than ____ person on the forward airstair at any given time"):
     st.write("one")
 
@@ -440,7 +446,7 @@ if off_on:
     voltage = "25.0 - 29.5 Vdc"
     load_capacity = "1,200 A Initial State Surge, 450 A Continuous"
     min_v_start = "24.0 Vdc"
-    min_v_charge = "20.9 Vdc"
+    min_v_charge = "28 Vdc"
     max_volt_charge = "29.5 Vdc"
     min_oat_gpu_start = "-54$\degree$C"
 
@@ -545,7 +551,7 @@ with st.expander("The inflation of the de-icing boots is not recommended when TA
 
 -40$\degree$C
 
-:blue-background[Note:] If operated below -40$\degree$C, a visual isnpection of the pneumatic boots must be performed and a system functional test carried out before takeoff.
+:blue-background[Note:] If operated below -40$\degree$C, a visual inspection of the pneumatic boots must be performed and a system functional test carried out before takeoff.
 """)
     
 st.write("#### Wing Anti-Ice System")
@@ -576,7 +582,7 @@ with st.expander(f"{warning}", expanded=True, icon="🚨"):
 with st.expander("Do not _________ if there are signs of ice, snow or frost on the lifting surfaces."):
     st.write("takeoff")
 
-with st.expander("If the airplane encounters conditions that are ddetermined to contain _____________ or ___________, the pilot must immediately exit the conditions by changing altitude or course"):
+with st.expander("If the airplane encounters conditions that are determined to contain _____________ or ___________, the pilot must immediately exit the conditions by changing altitude or course"):
     st.write("freezing rain / freezing drizzle")
 
 with  st.expander("Do not operate into airports reporting __________ or _________"):
@@ -606,7 +612,7 @@ with st.expander("Do not ________ the ________ in severe icing conditions"):
 
 
 st.write("#### Use of SWPS Ice Mode Override")
-with st.expander(" Do not opearte thw ________________ push botton / _______________ rotary selector if there are signs of ice on the wings"):
+with st.expander(" Do not operate the ________________ push botton / _______________ rotary selector if there are signs of ice on the wings"):
     st.write(" SWPS ICE OVRD / SWPS ICE MODE")
 
 
@@ -622,7 +628,7 @@ with st.expander("The PC-24 is certified in the Commuter Category and is approve
 - Flight Into Known Icing conditions
 """)
     
-with st.expander ("An approprately authorized and approved ______ may be used to operate the aircraft with inoperative equipment"):
+with st.expander ("An appropriately authorized and approved ______ may be used to operate the aircraft with inoperative equipment"):
     st.write("MMEL")
 
 
@@ -949,7 +955,7 @@ st.write("## Powerplant")
 st.write("#### Engine Operating Limitations")
 
 with st.expander(f"{caution}", expanded=True, icon="⚠️"):
-    st.write("When te tailwind component is greater than 10kt, do not exceed 60% N1 engine speed until the aircraft rolling speed is greater than the tailwind component.")
+    st.write("When the tailwind component is greater than 10kt, do not exceed 60% N1 engine speed until the aircraft rolling speed is greater than the tailwind component.")
 
 
 with st.expander("Except in an emergency, selection of engine thrust settings greater than NTO is: "):
@@ -1067,7 +1073,7 @@ if  temp == "Below 10$\degree$C":
     else:
         visible_moisture = False
 
-crew_seated = st.checkbox("A flight crew memeber is seated at the controls with a lap belt fastened")
+crew_seated = st.checkbox("A flight crew member is seated at the controls with a lap belt fastened")
 xwind = st.checkbox("Crosswind / tailwind are less than 20 kt (Average)")
 r_engine = st.checkbox("Only the right engine is to be operated in QPM")
 
@@ -1084,7 +1090,7 @@ with st.expander("The thrust lever must remain at ______"):
 with st.expander("The generator load must not exceed _______"):
     st.write("250 A")
 
-with st.expander("The right engin must exit QPM and set to Ground Idle before ________________"):
+with st.expander("The right engine must exit QPM and set to Ground Idle before ________________"):
     st.write("the left engine is started")
 
 
@@ -1094,7 +1100,7 @@ st.write("###### Use of Nacelle Anti-ice")
 
 with st.expander("The NAI must must be switched of for all ground operations when:"):
     st.write("""
-- Visible mouisture and indicated SAT or reported OAT <= 10$\degree$C, or
+- Visible moisture and indicated SAT or reported OAT <= 10$\degree$C, or
 - Ice or other frozen precipitation is observed adhering to any part of the engine inlet""")
     
 with st.expander("The NAI must be switched on for climb, cruise, descent under the following conditions:"):
@@ -1104,7 +1110,8 @@ with st.expander("The NAI must be switched on for climb, cruise, descent under t
 - Any time aci accumulation is observed on the airframe""")
     
 with st.expander("Do not operate the NAI when TAT is:"):
-    st.write("> than 10$\degree$C")
+    st.write("greater than 10$\degree$C")
+
 with st.expander(f"{note}", expanded=True, icon="📝"):
     st.write("""Turning NAI on and off in quick succession in flight may cause a “No Dispatch” annunciation. Therefore, it is recommended that NAI remains on for a minimum of 2 minutes when activated, to allow the Tt2 sensor heat to stabilize and all moisture to be cleared from the probe""")
 
@@ -1121,8 +1128,8 @@ with st.expander("The following equipment must be operational to enter RVSM airs
     st.write("""
 - Two primary Air Data Systems (ADS)
 - One flight controller KMC 9200A with altitude pre-selector
-- One automatic flight control syste
-- One altitude reporting transponder KXP 2290A""")
+- One automatic flight control system
+- One altitud reporting transponder KXP 2290A""")
     
 ########################### SECONDARY FLIGHT CONTROL SYSTEM ####################
 st.write("## Secondary Flight Control System")
