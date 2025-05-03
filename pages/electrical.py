@@ -376,3 +376,82 @@ with st.expander("If a dual generator failure occurs, the aircraft is only power
 
 with st.expander("When ground power is available to power the electrical system, the GPU displays ______"):
     st.write("AVAIL")
+
+with st.expander("What is the main difference between the Nicad and the Li-Ion batteries?"):
+    st.write("""  Li-Ion batteries monitor, optimize and protect the battery from failure.""")
+
+with st.expander("What busses are powered by Batt 1?"):
+    st.write("""
+* Left Bus
+* Essential Bus""")
+    
+with st.expander("What busses are powered by Batt 2?"):
+    st.write("""
+* Right Bus (for engine starts)""")
+    
+
+with st.expander("Volts and amps of Batt 1?"):
+    st.write("""
+* 24V / 44A""")
+    
+with st.expander("Volts and amps of Batt 2?"):
+    st.write("""
+* 26.4V / 40A""")
+    
+with st.expander("What converts power from DC to AC and from AC to DC?"):
+    st.write("""
+* PCU's - Power Conversion Unit""")
+    
+with st.expander("What type of 'modes' may we see on the ELEC syn page during different phases?"):
+    st.write("""
+* PDC Loads - Pre-departure cleareance Mode - Batt 1 ON
+* START Loads - Prestart Mode - Bat 2 ON
+* QPM Loads 
+* S/GEN Loads - Single Generator after GPU start / Genrator Failure
+* DASHES - Dual generator failure
+""")
+    
+with st.expander("What does XC1 enable?"):
+    st.write("""
+* A generator to power all busses""")
+    
+with st.expander("What does XC2 connect?"):
+    st.write("""
+* Left Bus and Right Bus""")
+    
+with st.expander("When might you see XC2 closed?"):
+    st.write("""
+* During Left engine start
+* GPU on
+* GPU right engine start
+""")
+    
+with st.expander("When might you see XC1 closed?"):
+    st.write("""
+* QPM mode
+* GPU on
+* During starts / Batt or GPU
+* Single generator running""")
+    
+with st.expander("In normal conditions, what is being powered by GEN 1?"):
+    st.write("""
+* Left Bus
+* Essential Bus""")
+    
+with st.expander("In normal conditions, what is being powered by GEN 2?"):
+    st.write("""
+* Right Bus""")
+    
+with st.expander("What performs power distribution monitoring functions for the left bus?"):
+    st.write("""
+* DCPU 1 and DCPU 3""") 
+
+with st.expander("What performs power distribution monitoring functions for the right bus?"):
+    st.write("""""
+* DCPU 2 and DCPU 4""") 
+    
+with st.expander("How many SB's per EPDU?"):
+    st.write("""
+* 41""")
+    
+

@@ -69,7 +69,7 @@ with st.expander("Flight alerting system (FAS) annunciators appear on each PFD a
 with st.expander("The main purpose of SmarView SVS is bot to provide and increase situational awareness.  True or False?"):
     st.markdown("""True""")
 
-with st.expander("The ____ is an independent system that provides critiacl flight altitude and heading data in the event of total display failure"):
+with st.expander("The ____ is an independent system that provides critiacal flight altitude and heading data in the event of total display failure"):
     st.markdown("""ESIS""")
 
 with st.expander("Caustion CAS messages can only be scrolled after acknowledging with the master caution push button. True or False?"):
@@ -80,3 +80,14 @@ with st.expander("A link within the ECL to automaticall open the assiciated syno
 
 with st.expander("To test the CVFDR, press the CVR TEST/ERASE button for ________ seconds to illuminate the switch."):
     st.markdown("""5""")
+
+with st.expander("What parameters are taken into account for the Takeoff warning?"):
+    st.markdown("""
+- Parking brake released
+- Flaps 8$\degree$ or 15$\degree$
+- Trim setting in green
+- Rudder lock released
+- EMER brake pressure above 2750 psi
+- Thrust lever at MCT for 2 seconds or more
+- Airbrakes retracted""")
+    
