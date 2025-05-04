@@ -59,8 +59,7 @@ with st.expander("What is the indication of the fire bottle when empty?"):
     st.write("""
 * The bottle icon will turn yellow
 * EMPTY will display in the text box
-* EMPTY will display in the FIRE XTING pushbuttons
-* XTING 1/2 Empty""")
+* XTING 1 or XTING 2 Empty""")
     
 
 with st.expander("What indications are there when both fire bottles are empty?"):
