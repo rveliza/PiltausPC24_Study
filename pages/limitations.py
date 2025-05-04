@@ -1057,6 +1057,24 @@ exceeds 10 kt.
 refer to Battery Limitations.
     """)
 
+st.write("###### Starter Duty Cycle Limitations")
+with st.expander(f"{caution}", expanded=True, icon="⚠️"):
+    st.write("If any engine related emergency or abnormal procedure requires a Dry Motor Run, the 1 min OFF cycle does not apply and a Dry Motor Run may be performed according to the procedure without delay")
+
+with st.expander("Abort engine stgart where N1 fails to inbrease by _______ N2"):
+    st.write("25%")
+
+with st.expander("Start attempts:"):
+    st.write("""
+- 1st attempt: 50 sec ON, 1 min OFF
+- Dry Motor Run: 50 sec ON, 1 min OFF
+- 2nd attempt: 50 sec ON, 30 min OFF""")
+    
+st.write("###### Post-Start Temperature Limitations")
+
+with st.expander("The minimum oil temperature for N2 > 80% for QPM operation is______"):
+    st.write("10$\degree$C")
+
 st.write("#### Quiet Power Mode")
 with st.expander("Do not operate the _____ during QPM operation"):
     st.write("NAI")
