@@ -92,7 +92,7 @@ st.write("## Lights and Switches")
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/trim_sec_stab_sw.png", use_container_width=True)
+    st.image("images/trim_sec_stab_sw.png")
 with col2:
     with st.expander("SEC STAB TRIM "):
         st.markdown("""
@@ -108,7 +108,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/trim_aileron_sw.png", use_column_width=True)
+    st.image("images/trim_aileron_sw.png")
 with col2:
     with st.expander("AIL TRIM"):
         st.markdown("""
@@ -118,7 +118,7 @@ with col2:
         
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/trim_rud_knob.png", use_container_width=True)
+    st.image("images/trim_rud_knob.png")
 with col2:
     with st.expander("RUD TRIM"):
         st.markdown("""
@@ -135,7 +135,7 @@ emer_flap_selection = {
 }
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image(emer_flap_selection[flap_bt_pos]["img"], use_container_width=True)
+    st.image(emer_flap_selection[flap_bt_pos]["img"])
 with col2:
     with st.expander("FLAPS EMERGENCY POWER PUSHBUTON"):
         st.markdown(F"""
@@ -146,7 +146,7 @@ with col2:
         
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/flap_lever.png", use_column_width=True)
+    st.image("images/flap_lever.png")
 with col2:
     with st.expander("FLAP LEVER"):
         st.markdown("""
@@ -165,7 +165,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/airbrake_lever.png", use_column_width=True)
+    st.image("images/airbrake_lever.png")
 with col2:
     with st.expander("AIRBRAKE LEVER"):
         st.markdown("""
