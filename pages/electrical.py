@@ -452,6 +452,6 @@ with st.expander("What performs power distribution monitoring functions for the 
     
 with st.expander("How many SB's per EPDU?"):
     st.write("""
-* 41""")D
+* 41""")
     
 

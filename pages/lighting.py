@@ -8,7 +8,7 @@ st.write("## Lights and Switches")
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_test_btn.png", use_column_width=True)
+    st.image("images/light_test_btn.png")
 with col2:
     with st.expander("COCKPIT LAMP TEST"):
         st.markdown("""
@@ -20,7 +20,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_logo_sw.png", use_column_width=True)
+    st.image("images/light_logo_sw.png")
 with col2:
     with st.expander("LOGO / NAV"):
         st.markdown("""
@@ -30,7 +30,7 @@ with col2:
         
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_strobe_sw.png", use_column_width=True)
+    st.image("images/light_strobe_sw.png")
 with col2:
     with st.expander("STROBE / BEACON"):
         st.markdown("""
@@ -44,7 +44,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_taxi_sw.png", use_column_width=True)
+    st.image("images/light_taxi_sw.png")
 with col2:
     with st.expander("TAXI"):
         st.markdown("""
@@ -56,7 +56,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_landing_sw.png", use_column_width=True)
+    st.image("images/light_landing_sw.png")
 with col2:
     with st.expander("LANDING / PULSE"):
         st.markdown("""
@@ -70,7 +70,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_recog_sw.png", use_column_width=True)
+    st.image("images/light_recog_sw.png")
 with col2:
     with st.expander("RECOG / PULSE"):
         st.markdown("""
@@ -81,7 +81,7 @@ with col2:
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/light_emer_sw.png", use_column_width=True)
+    st.image("images/light_emer_sw.png")
 with col2:
     with st.expander("EMER LTS"):
         st.markdown("""

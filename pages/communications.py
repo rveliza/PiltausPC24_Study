@@ -8,7 +8,7 @@ st.write("## Lights and Switches")
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/comms_mic_select_knob.png", use_column_width=True)
+    st.image("images/comms_mic_select_knob.png")
 with col2:
     with st.expander("MIC SELECT Knob"):
         st.markdown("""
@@ -22,7 +22,7 @@ with col2:
 ############ EMERG COM !
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/comms_emerg_com1_btn.png", use_column_width=True)
+    st.image("images/comms_emerg_com1_btn.png")
 with col2:
     with st.expander("MIC SELECT Knob"):
         st.markdown("""
@@ -35,7 +35,7 @@ with col2:
 ############### KMA 29 Audio Panel
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/comms_kma29_panel.png", use_column_width=True)
+    st.image("images/comms_kma29_panel.png")
 with col2:
     with st.expander("KMA29 Audio Panel"):
         st.markdown("""

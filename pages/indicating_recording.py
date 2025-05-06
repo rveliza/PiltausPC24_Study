@@ -45,7 +45,7 @@ st.write("## Lights and Switches")
 
 col1, col2 = st.columns(cols_settings)
 with col1:
-    st.image("images/cvr_test.png", use_column_width=True)
+    st.image("images/cvr_test.png")
 with col2:
     with st.expander("CVR TEST/ERASE"):
         st.markdown("""
