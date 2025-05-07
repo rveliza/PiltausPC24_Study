@@ -148,7 +148,7 @@ elec_dict = {"2 Generators": {"img": "images/elec_2gen_diag.png", "img2": "image
 * The electrical configuration for the start is a cross-generator start."""},
 
             "Single Gen, Left OFF / Fail": {"img": "images/elec_left_fail_diag.png", "img2": "images/elec_left_fail_diag2.png", "title": "Single Generator Mode - Flight", "desc": """
-* When only a single generator is availabe the logic closes XC ! to connect the operative side to the inoperative side of the system
+* When only a single generator is availabe the logic closes XC1 to connect the operative side to the inoperative side of the system
 * Automatic shedding occurs."""},
 
             "Single Gen, Right OFF / Fail": {"img": "images/elec_right_fail_diag.png", "img2": "images/elec_right_fail_diag2.png", "title": "Single Generator - Right OFF / Fail", "desc": ""},
@@ -447,7 +447,7 @@ with st.expander("What performs power distribution monitoring functions for the 
 * DCPU 1 and DCPU 3""") 
 
 with st.expander("What performs power distribution monitoring functions for the right bus?"):
-    st.write("""""
+    st.write("""
 * DCPU 2 and DCPU 4""") 
     
 with st.expander("How many SB's per EPDU?"):

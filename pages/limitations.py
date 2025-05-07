@@ -980,14 +980,14 @@ engine_op_limits = """
 engine_op_limits_off = """
 | Operating Condition | Thrust (lb) | N1 (%) | n2 (%) | ITT ($\degree$C) | Oil PRESS (psi) | Oil TEMP ($\degree$C) |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Normal Takeoff |  |  |  |  |  |  |
-| ATR |  |  |  |  |  |  |
-| Maximum Cont / Climb |  |  |  |  |  |  |
-| Ground or Flight Idle (Cont) |  |  |  |  |  |  |
-| QPM |  |  |  |  |  |  |
-| Starting |  |  |  |  |  |  |
-| Transient High |  |  |  |  |  |  |
-| Transient Low |  |  |  |  |  |  |
+| Normal Takeoff | * | * | * | * | * | * |
+| ATR | * | * | * | * | * | * |
+| Maximum Cont / Climb |  | * | * | * | * | * |
+| Ground or Flight Idle (Cont) |  |  |  |  | * | * |
+| QPM |  |  | * |  | * | * |
+| Starting |  |  |  | * |  | * |
+| Transient High |  | * | * | * | * | * |
+| Transient Low |  |  |  |  | * |  |
 
 """
 
@@ -1061,7 +1061,7 @@ st.write("###### Starter Duty Cycle Limitations")
 with st.expander(f"{caution}", expanded=True, icon="⚠️"):
     st.write("If any engine related emergency or abnormal procedure requires a Dry Motor Run, the 1 min OFF cycle does not apply and a Dry Motor Run may be performed according to the procedure without delay")
 
-with st.expander("Abort engine stgart where N1 fails to inbrease by _______ N2"):
+with st.expander("Abort engine stgart where N1 fails to increase by _______ N2"):
     st.write("25%")
 
 with st.expander("Start attempts:"):
@@ -1118,7 +1118,7 @@ with st.expander("The right engine must exit QPM and set to Ground Idle before _
 st.write("#### Engine Limitation in Icing Conditions")
 st.write("###### Use of Nacelle Anti-ice")
 
-with st.expander("The NAI must must be switched of for all ground operations when:"):
+with st.expander("The NAI must must be switched on for all ground operations when:"):
     st.write("""
 - Visible moisture and indicated SAT or reported OAT <= 10$\degree$C, or
 - Ice or other frozen precipitation is observed adhering to any part of the engine inlet""")
@@ -1127,7 +1127,7 @@ with st.expander("The NAI must be switched on for climb, cruise, descent under t
     st.write("""
 - Visible moisture witht TAT <= 10$\degree$C, or
 - Flight through ice crystals, or
-- Any time aci accumulation is observed on the airframe""")
+- Any time ace accumulation is observed on the airframe""")
     
 with st.expander("Do not operate the NAI when TAT is:"):
     st.write("greater than 10$\degree$C")

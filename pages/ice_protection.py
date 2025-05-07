@@ -91,7 +91,7 @@ with st.expander("Describe the ICE Modes"):
     st.write("""
 * Ice mode 0: Non-icing conditions
 * Ice mode 1:
-    - Icing conditions are encontered + 70 seconds
+    - Icing conditions are encountered + 70 seconds
     - Unlatches automatically when TAT > 15$\degree$ for more than 10 minutes
     - Unlatches manually commanding a reset during non-icing conditions
 * Ice mode 2:

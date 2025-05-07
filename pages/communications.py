@@ -26,10 +26,10 @@ with col1:
 with col2:
     with st.expander("MIC SELECT Knob"):
         st.markdown("""
-* Changes the active COM frequency to 121.5 MHz (or to configured emergency frequency)
+* Changes the active COM 1 frequency to 121.5 MHz (or to configured emergency frequency)
 * Inhibits the frequency transfer function and removes the swap icon from the softkey
 * Pressing agian changes the stby frequency in COM 1 to 121.5 MHz
-* Perssing again returns frequency selection back to its original functionality and the active and stanby frequencies remain unchanged
+* Pressing again returns frequency selection back to its original functionality and the active and stanby frequencies remain unchanged
                     """)
         
 ############### KMA 29 Audio Panel

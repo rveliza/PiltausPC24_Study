@@ -14,7 +14,7 @@ with col2:
         st.markdown("""
 * LH Panel (2): CVR TEST / ERASE, AURAL DISABLE
 * Glareshield (8): Master Warning, Master Caution, FIRE XTING, ENG ISOL
-* Center Pedestal (6): SEC STAB TRIM, EMER COM 1, WS EMER PWR, SWPS ICE OVRD, FLAPS EMER PWR, DUMP
+* Center Pedestal (5): SEC STAB TRIM, EMER COM 1, WS EMER PWR, FLAPS EMER PWR, DUMP
 * OVHD Panel (2): BUS TIE, EXT PWR
                     """)
 

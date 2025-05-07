@@ -21,8 +21,8 @@ with st.expander("What keeps the landing gear in the up and down position?"):
 with st.expander("What are the normal gear indications?"):
     st.write("""
 * DOWN: 3 green DN semi round lights
-* TRANSIT: 3 Square with dashes
-* UP: 3 up squares in white
+* TRANSIT: 3 squares with dashes
+* UP: 3 squares in white
 * Declutter: Greyed out when both flaps and gear are up""")
     
 with st.expander("After how many seconds of a mismatch do we get warning?"):
@@ -95,25 +95,25 @@ with st.expander("What is the nominal hydraulic pressure?"):
 with st.expander("Describe the Park Brake System Check?"):
     st.write("""
 * Set and release the PB until the pressure falls below 2800 psi
-* Check that the pum starts 
+* Check that the pump starts 
 * Check pressure recharged to above 2850 psi
 * Check that the pump stops""")
     
 with st.expander("What indications do you expect when gear is up?"):
     st.write("""
 * UMS disabes the system, as it bleeds down:
-    - Motor pump is off
-    Main brake accumulator and readout turn amber""")
+    - Motor pump is off    
+    - Main brake accumulator and readout turn amber""")
 
 with st.expander("What indications do you expect when gear is down?"):
     st.write("""
 * Either flaps or the gear are down, the system is active to charge in flight prior to landing:
-    - Motor pump is on
-    Main brake accumulator and readout turn green when pressure is above 2600 psi""")
+    - Motor pump is on    
+    - Main brake accumulator and readout turn green when pressure is above 2600 psi""")
 
-with st.expander("What is braking Despin??"):
+with st.expander("What is braking despin??"):
     st.write("""
-* If UMS detects aircraft is on flight and landing gear begin to reetract, it commands the brakes to be applied in order to stop them prior to entenring the MLG bay.""")
+* If UMS detects aircraft is on flight and landing gear begin to retract, it commands the brakes to be applied in order to stop them prior to entenring the MLG bay.""")
     
 with st.expander("How does the antiskid system work?"):
     st.write("""

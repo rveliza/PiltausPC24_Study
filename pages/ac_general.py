@@ -19,15 +19,15 @@ with st.expander("Aircraft Dimensions"):
     feet_cm = st.radio(
     "Units",
     ["ft", "mt"],
-    index=1,
+    index=0,
     label_visibility="collapsed",
     key="dimensions",
     horizontal=True
 )
-    ac_length = "16.8 m" if feet_cm == "ft" else "55 ft 2 in"
-    ac_wingspan = "17 m" if feet_cm == "ft" else "55 ft 9 in"
-    ac_height = "5.3 m" if feet_cm == "ft" else "17 ft 4 in"
-    ac_wheelbase = "3.0 m" if feet_cm == "ft" else "9 ft 10 in"
+    ac_length = "16.8 m" if feet_cm == "mt" else "55 ft 2 in"
+    ac_wingspan = "17 m" if feet_cm == "mt" else "55 ft 9 in"
+    ac_height = "5.3 m" if feet_cm == "mt" else "17 ft 4 in"
+    ac_wheelbase = "3.0 m" if feet_cm == "mt" else "9 ft 10 in"
     st.markdown(f"""
 * Length: {ac_length}
 * Wingspan: {ac_wingspan}
@@ -41,7 +41,7 @@ with st.expander("Cabin Door"):
 * Six shoot bolt indicators
 * Door is closed when all six indicators are green
     * When door is open or disenganges, indicors are red
-    * PAX DOOR OPEN Cass message displays.body=
+    * PAX DOOR OPEN Cass message displays
 """)
     
 
@@ -53,12 +53,6 @@ with st.expander("Cargo Door"):
     * When cargo door is open or improperly secured, indicators turn red and a CARGO DOOR OPEN CAS message displays.
 * Tail support must be installed if personell in the cargo area during loading
 * CAUTION: Operation of the left engine is prohibited with the cargo door open """)
-    
-
-    
-with st.expander("Maximum towbarless tug weight"):
-    st.markdown("""
-* 15,000 lbs (6,804 kg)""")
     
 
 with st.expander("Maximum towbarless tug weight"):

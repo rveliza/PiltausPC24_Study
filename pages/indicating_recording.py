@@ -66,13 +66,13 @@ with st.expander("The ACE$^{tm}$ avionics system monitors flight instruments on 
 with st.expander("Flight alerting system (FAS) annunciators appear on each PFD and are cleared with the master warning pushbutton. True or False?"):
     st.markdown("""False""")
 
-with st.expander("The main purpose of SmarView SVS is bot to provide and increase situational awareness.  True or False?"):
+with st.expander("The main purpose of SmarView SVS is to provide and increase situational awareness.  True or False?"):
     st.markdown("""True""")
 
-with st.expander("The ____ is an independent system that provides critiacal flight altitude and heading data in the event of total display failure"):
+with st.expander("The ____ is an independent system that provides critical flight altitude and heading data in the event of total display failure"):
     st.markdown("""ESIS""")
 
-with st.expander("Caustion CAS messages can only be scrolled after acknowledging with the master caution push button. True or False?"):
+with st.expander("Caution CAS messages can only be scrolled after acknowledging with the master caution push button. True or False?"):
     st.markdown("""True""")
 
 with st.expander("A link within the ECL to automaticall open the assiciated synoptic page is provided when the ECL is displayed on the _______"):

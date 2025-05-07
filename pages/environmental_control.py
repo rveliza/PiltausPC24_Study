@@ -8,7 +8,7 @@ with st.expander("What are the main components of the environmental control syst
     st.write("""
 * Shutoff Valves - Spring loaded closed
 * Diverter Valves
-    - Open - hor air to system
+    - Open - hot air to system
     - Closed - air to precooler
 * Croos-Bleed Valve - Spring loaded closed, connects the normally independent left and right systems
 * Preecoler - Cool HP bleed air from the diverter valve using exhaust air
@@ -93,10 +93,10 @@ with st.expander("What are the trigger for FIELD HI??"):
     
 with st.expander("What control the oxygen masks deployment?"):
     st.write("""
-* EMCU: 12,850 +/- 500
+* EMCU: 12,850 +/- 150
     - If ECMU fails, the ACE sets the system at 14,800 +/- 500""")
 
-with st.expander("To what altitude is the altitude limiting mode set to?"):
+with st.expander("To what altitude is the altitude limiting for the OFV set to?"):
     st.write("14,500 ft")
 
 
