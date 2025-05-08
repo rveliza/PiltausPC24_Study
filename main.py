@@ -18,7 +18,7 @@ oxygen_control_page = st.Page("pages/oxygen.py", title="Oxygen", icon="👃")
 altitudes_page = st.Page("pages/altitudes.py", title="Altitudes", icon="⛰️")
 ice_protection_page = st.Page("pages/ice_protection.py", title="Ice Protection", icon="⛄")
 temperatures_page = st.Page("pages/temperatures.py", title="Temperatures", icon="🌡️")
-ace_page = st.Page("pages/ace.py", title="ACE", icon="")
+ace_page = st.Page("pages/ace.py", title="ACE", icon="👨‍✈️")
 
 pg = st.navigation({
     "Must Know": [memory_items_page, limitations_page],
