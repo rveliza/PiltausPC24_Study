@@ -5,7 +5,7 @@ st.title("ACE")
 with st.expander("To what displays does the AGM1 provide graphics to?"):
     st.write("DU1, DU2")
 
-with st.expander("To what displays does the AGM1 provide graphics to?"):
+with st.expander("To what displays does the AGM2 provide graphics to?"):
     st.write("DU3, DU4")
 
 with st.expander("What are the two important failure circumstances that require reversion control?"):
@@ -26,7 +26,7 @@ with st.expander("How can you delete the data from the CVR?"):
 * CVR is recordint (one engine running)
 """)
     
-with st.expander("For how long wild the FDR record?"):
+with st.expander("For how long will the FDR record?"):
     st.write("25 hours")
 
 with st.expander("What are the main components of the AHRS system?"):
@@ -50,7 +50,7 @@ with st.expander("Where are the AFCS hosted?"):
 * The active system swaps every power cycle, and the other is standing by
 """)
     
-with st.expander("How many servos are there for the AFCOS?"):
+with st.expander("How many servos are there for the AFCS?"):
     st.write("""
 * 1 for roll
 * 1 for pitch
