@@ -74,11 +74,39 @@ with st.expander("What causes the L/R ENG Fail CAS message?"):
 * N1 dropped 15% for 0.5 seconds""")
     
 
-with st.expander("When is the ATR automatically activated?"):
+with st.expander("When is the ATR automatically armed and engaged?"):
     st.write("""
-* When the throttles are at T/O and an engine fails""")
+* Armed:
+    - Aircraft on ground
+    - Each ECU pass built-in tests
+    - ITT and performance data from previous takeoff indicate sufficient margin to allow ATR operation
+* Engaged
+    - Throttles are at T/O      
+    - V1 was entered by pilot during preflight
+    - Speed above V1
+    - Loss of 15% within 0.5 seconds
+    - When manually pushing the TLA to the ATR position
+""")
     
 with st.expander("At how many minutes after takeoff does the ATR Disarm CAS message appear?"):
     st.write("""
 * 5 minutes""")
     
+
+with st.expander("What circumstances end in an automatic shutdown of the engines?"):
+    st.write("""
+* N1 overspeed
+* N2 overspeed
+* LP shaft separation
+* Loss of all electrical power (Aircraft and PMA)
+* Start malfunctions
+    - Hot start (ITT rapidly passing 700$\degree$C)
+    - Hung start (ITT high, N1 rising slowly)
+    - No lightoff (12 secs after ignition)
+""")
+    
+with st.expander("What type of oils are approved?"):
+    st.write("""
+* Mobile II
+* Mobile 254
+""")

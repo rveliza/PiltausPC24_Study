@@ -83,11 +83,12 @@ with st.expander("To test the CVFDR, press the CVR TEST/ERASE button for _______
 
 with st.expander("What parameters are taken into account for the Takeoff warning?"):
     st.markdown("""
-- Parking brake released
+- Rudder lock released
+- Airbrakes retracted
+- Thrust lever at MCT for 2 seconds or more
 - Flaps 8$\degree$ or 15$\degree$
 - Trim setting in green
-- Rudder lock released
+- Parking brake released
 - EMER brake pressure above 2750 psi
-- Thrust lever at MCT for 2 seconds or more
-- Airbrakes retracted""")
+                """)
     
