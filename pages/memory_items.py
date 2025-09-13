@@ -13,7 +13,7 @@ with st.expander(":red-background[EMERGENCY DESCENT] * Non Annunciated"):
     
 with st.expander(":red-background[ENGINE FIRE ON-GROUND / TAIL PIPE FIRE] * Non Annunciated"):
     st.markdown("""
-*If during start, engine fire detector senses a temperature below 510$\degree$C or else engine fire is indicated by ground personnel.*    
+*If during start, engine fire detector senses a temperature above 510$\degree$C or else engine fire is indicated by ground personnel.*    
 1. THRUST LEVER - IDENTYFY / IDLE
 2. ENG SWITCH - OFF
 3. ENG ISOL pushbutton - Push / check after 5 sec amber ':orange-background[**ENG ISOL**]'
