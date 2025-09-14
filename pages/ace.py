@@ -46,6 +46,20 @@ with col2:
     * Pushing the button has no effect
 """)
         
+radio_type = st.radio(
+    "Radio",
+    ["KMA-29", "KMA-29A"],
+    index=1,
+    label_visibility="collapsed",
+    key="radio_type",
+    horizontal=True
+)
+
+if radio_type == "KMA-29":
+    st.image("images/comms_kma29_panel.png")
+else:
+    st.image("images/comms_kma29a_panel.png")
+        
 col1, col2 = st.columns(cols_settings)
 with col1:
     st.image("images/speaker_pa_pb.png")
@@ -90,6 +104,8 @@ with col2:
     * Passengers hear entertainment 2
     * Copilot cannot select other mode
 """)
+        
+
     
 st.write("## Question Bank")
 
