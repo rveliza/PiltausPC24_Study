@@ -403,7 +403,8 @@ st.write("#### Battery Limitations")
 with st.expander("The voltage for charging the batteries must not exceed: "):
     st.write("32 V")
 
-batt_type = st.radio("Batteries", ["Ni-Cd", "Li-Ion"], key="battery_type", horizontal=True)
+
+batt_type = st.radio("Batteries", ["Ni-Cd", "Li-Ion"], key="battery_type", horizontal=True, index=1)
 
 min_bat_temp_flt = ""
 min_bat_start = ""

@@ -69,7 +69,7 @@ with st.expander(":red-background[CABIN ALTITUDE]"):
 *Cabin altitude above warning threshold and voice callout 'CABIN ALTITUDE'*
 1. Crew oxygen masks - Don / 100% / Establish COMM
 2. Passenger oxygen - ON. Instruct passengers to don dropdown masks    
-*IF rapid or explisve decompression:*    
+*IF rapid or explosive decompression:*    
 3. Emergency Descent - 3-NAE-02 - Accomplish
 """)
     

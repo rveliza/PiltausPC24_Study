@@ -1,6 +1,97 @@
 import streamlit as st
+cols_settings = [20, 80]
+
 
 st.title("ACE")
+
+st.write("## Lights and Switches")
+
+col1, col2 = st.columns(cols_settings)
+
+with col1:
+    st.image("images/autothrottle_pb.png")
+with col2:
+    with st.expander("AUTO THROTTLE"):
+        st.markdown("""
+* On Ground:    
+    * Armed when pressed
+        * LED does not illuminate
+        * AT is displayed on the PFD
+    * Active when both thrust levers are advanced above 50% N1
+""")
+        
+col1, col2 = st.columns(cols_settings)
+with col1:
+    st.image("images/bank_pb.png")
+with col2:
+    with st.expander("BANK"):
+        st.markdown("""
+* Illuminated:
+    * LOW: 17$\degree$ of bank
+    * If heading mode is active a magenta arc is is displayed on the attitude sphere int the PFD.
+* Not Illuminated:
+    * HIGH: 27$\degree$ of bank
+""")
+        
+col1, col2 = st.columns(cols_settings)
+with col1:
+    st.image("images/l_r_pb.png")
+with col2:
+    with st.expander("L / R"):
+        st.markdown("""
+* Default setting at power up is L
+* Pressing the switch toggles between L and R
+* Coupled approach:
+    * Both arrows illuminate below 1,200 feet RA
+    * Pushing the button has no effect
+""")
+        
+col1, col2 = st.columns(cols_settings)
+with col1:
+    st.image("images/speaker_pa_pb.png")
+with col2:
+    with st.expander("SPEAKER / PA"):
+        st.markdown("""
+* ON:
+    * Cockipt speaker ON
+    * Headesets ON
+* OFF:
+    * Cockpit speaker OFF
+    * Headsets ON
+* PA:
+    * When selected on either panel, pushing either PTT button transmits over the PA.
+    * Left side has priority over right side if both are pressed at the same time.
+""")
+
+col1, col2 = st.columns(cols_settings)
+with col1:
+    st.image("images/ics_pb.png")
+with col2:
+    with st.expander("INTERCOM SELECTOR"):
+        st.markdown("""
+* ISO:
+    * Pilot isolated from intercom and connected only to the radio system
+    * Entertainment 1 inputs are muted
+    * Copilot hears passengers intercom and entertainment 1
+    * Passengers hear copilot and entertainment 2
+    * Neither copilor nor passengers hear pilot transmissions or radio receptions
+    * This selection must be made for communications when:
+        * On standby bus (PDC mode) operations
+    * Copilot may select other modes
+* ALL:
+    * Pilot, copilot, and passengers hear the selected radio and intercom
+    * Pilot and copilot hear entertainment 1
+    * Passengers hear entertainment 2
+    * Copilot cannot select other mode
+* CREW:
+    * Pilot and copilot hear the selected radio and intercom
+    * Pilot and copilot hear entertainment 1
+    * Passengers hear neither radio nor intercom transmissions
+    * Passengers hear entertainment 2
+    * Copilot cannot select other mode
+""")
+    
+st.write("## Question Bank")
 
 with st.expander("To what displays does the AGM1 provide graphics to?"):
     st.write("DU1, DU2")
@@ -23,7 +114,7 @@ with st.expander("How can you delete the data from the CVR?"):
     st.write("""
 * Parking break set
 * WOW
-* CVR is recordint (one engine running)
+* CVR is recording (one engine running)
 """)
     
 with st.expander("For how long will the FDR record?"):
