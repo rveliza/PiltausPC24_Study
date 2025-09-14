@@ -58,7 +58,7 @@ radio_type = st.radio(
 if radio_type == "KMA-29":
     st.image("images/comms_kma29_panel.png")
 else:
-    st.image("images/comms_kma29a_panel.png")
+    st.image("images/comms_kma29A_panel.png")
         
 col1, col2 = st.columns(cols_settings)
 with col1:
